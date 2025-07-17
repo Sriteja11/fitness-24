@@ -278,7 +278,7 @@ export default function DashboardPage() {
 
       {/* Summary Card */}
       <div className="w-full max-w-4xl bg-white/80 dark:bg-[#23272f]/80 rounded-2xl shadow-xl border border-[#e5e7eb] dark:border-[#23272f] p-6 mb-6">
-        <h2 className="text-xl font-semibold mb-4">Today's Summary</h2>
+        <h2 className="text-xl font-semibold mb-4">Today&apos;s Summary</h2>
         <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
           <div className="bg-[#f4f4f5] dark:bg-[#18181b] rounded-lg p-4 flex flex-col items-center border border-[#e5e7eb] dark:border-[#393a3d]">
             <span className="text-2xl font-bold">{totalCalories} / {calorieTarget}</span>
@@ -305,7 +305,7 @@ export default function DashboardPage() {
       {/* Food Log Card */}
       <div className="w-full max-w-4xl bg-white/80 dark:bg-[#23272f]/80 rounded-2xl shadow-xl border border-[#e5e7eb] dark:border-[#23272f] p-6 mb-6">
         <div className="flex justify-between items-center mb-4">
-          <h2 className="text-xl font-semibold">Today's Food Log</h2>
+          <h2 className="text-xl font-semibold">Today&apos;s Food Log</h2>
           <button
             onClick={() => {
               setFoodLog([]);

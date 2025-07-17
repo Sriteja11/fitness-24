@@ -94,8 +94,8 @@ export default function Home() {
               <div className="flex justify-between"><span>Mode:</span> <span>Weight Loss</span></div>
               <div className="flex justify-between"><span>Calorie Target:</span> <span>1800 kcal</span></div>
               <div className="flex justify-between"><span>Protein Target:</span> <span>120g</span></div>
-              <div className="flex justify-between"><span>Today's Calories:</span> <span>0 kcal</span></div>
-              <div className="flex justify-between"><span>Today's Protein:</span> <span>0g</span></div>
+              <div className="flex justify-between"><span>Today&apos;s Calories:</span> <span>0 kcal</span></div>
+              <div className="flex justify-between"><span>Today&apos;s Protein:</span> <span>0g</span></div>
             </div>
             <button
               className="mt-4 px-8 py-3 rounded-full bg-[#ededed] dark:bg-[#23272f] text-[#23272f] dark:text-[#ededed] font-bold text-lg shadow-md hover:shadow-lg border border-[#e5e7eb] dark:border-[#393a3d] hover:scale-105 transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-[#b6e5d8] focus:ring-offset-2 focus:ring-offset-[#f8fafc] dark:focus:ring-offset-[#18181b]"
