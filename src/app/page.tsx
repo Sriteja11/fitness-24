@@ -3,7 +3,16 @@
 import Image from "next/image";
 import { ResponsiveContainer, LineChart, Line, XAxis, YAxis, Tooltip, AreaChart, Area } from "recharts";
 import { useRouter } from "next/navigation";
-import { useState } from "react";
+import { useState, useEffect } from "react";
+
+// Define the interface for the beforeinstallprompt event (for type safety)
+interface BeforeInstallPromptEvent extends Event {
+  prompt: () => Promise<void>;
+  userChoice: Promise<{
+    outcome: 'accepted' | 'dismissed';
+    platform: string;
+  }>;
+}
 
 const weightData = [
   { week: "W1", weight: 80 },
@@ -25,9 +34,50 @@ const proteinData = [
 export default function Home() {
   const router = useRouter();
   const [showStats, setShowStats] = useState(false);
+  const [deferredPrompt, setDeferredPrompt] = useState<BeforeInstallPromptEvent | null>(null);  // Typed state
+  const [showInstallBtn, setShowInstallBtn] = useState(false);
+
+  useEffect(() => {
+    const handleBeforeInstallPrompt = (e: Event) => {
+      e.preventDefault();
+      const promptEvent = e as BeforeInstallPromptEvent;  // Safe cast with defined interface
+      setDeferredPrompt(promptEvent);
+      setShowInstallBtn(true);  // Show button when prompt is available
+    };
+
+    window.addEventListener("beforeinstallprompt", handleBeforeInstallPrompt);
+
+    return () => {
+      window.removeEventListener("beforeinstallprompt", handleBeforeInstallPrompt);
+    };
+  }, []);
+
+  const handleInstallClick = async () => {
+    if (!deferredPrompt) return;
+    await deferredPrompt.prompt();  // Type-safe call
+    const { outcome } = await deferredPrompt.userChoice;  // Type-safe await
+    if (outcome === "accepted") {
+      console.log("User installed the app");
+    } else {
+      console.log("User dismissed the prompt");
+    }
+    setDeferredPrompt(null);
+    setShowInstallBtn(false);  // Hide button after interaction
+  };
 
   return (
     <div className="relative min-h-screen bg-gradient-to-b from-[#f8fafc] via-[#e8eaee] to-[#f4f4f5] dark:from-[#18181b] dark:via-[#23272f] dark:to-[#18181b] text-[#23272f] dark:text-[#ededed] flex flex-col items-center justify-center px-4 py-8 transition-colors duration-300" style={{ fontFamily: "var(--font-luxurious)" }}>
+      {/* Custom A2HS Button (appears when available) */}
+      {showInstallBtn && (
+        <button
+          onClick={handleInstallClick}
+          className="fixed bottom-4 right-4 px-6 py-3 rounded-full bg-[#2563eb] text-white font-bold text-base shadow-lg hover:shadow-xl hover:scale-105 transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-[#b6e5d8] focus:ring-offset-2 z-50"
+          style={{ fontFamily: "var(--font-montserrat)" }}
+        >
+          Add to Home Screen
+        </button>
+      )}
+
       {/* Background charts */}
       <div className="absolute inset-0 -z-10 opacity-20 pointer-events-none select-none hidden sm:block">
         <div className="absolute top-10 left-0 w-1/2 h-64">
