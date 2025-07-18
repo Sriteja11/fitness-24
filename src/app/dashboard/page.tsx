@@ -1,6 +1,5 @@
 "use client";
 import { useEffect, useState } from "react";
-import { ResponsiveContainer, BarChart, Bar, XAxis, YAxis, Tooltip, Legend, CartesianGrid } from "recharts";
 import foodData from '../../config/FoodNutrionalInfo.json';
 import { FoodItem, FoodNutritionalInfo, UserProfile, Mode } from '@/types/dashboard/dashboard';
 import NutritionCharts from "@/components/NurtritionCharts";
@@ -272,8 +271,6 @@ export default function DashboardPage() {
   const totalCalories = foodLog.reduce((sum, f) => sum + (f.calories || 0), 0);
   const totalProtein = foodLog.reduce((sum, f) => sum + (f.protein || 0), 0);
   const totalFat = foodLog.reduce((sum, f) => sum + (f.fat || 0), 0);
-  const remainingCalories = calorieTarget - totalCalories;
-  const remainingProtein = proteinTarget - totalProtein;
 
   // Chart data
   const chartData = foodLog.map((f, i) => ({

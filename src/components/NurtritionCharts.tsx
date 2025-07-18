@@ -1,5 +1,6 @@
 "use client";
 import { ResponsiveContainer, BarChart, Bar, XAxis, YAxis, Tooltip, Legend, CartesianGrid, PieChart, Pie, Cell, RadialBarChart, RadialBar } from "recharts";
+import type { TooltipProps } from 'recharts';
 
 interface NutritionChartsProps {
   chartData: Array<{ name: string; Calories: number; Protein: number; Fat: number }>;
@@ -14,21 +15,25 @@ interface NutritionChartsProps {
 const COLORS = ['#b6b6e5', '#b6e5d8', '#f4b6b6'];
 
 // Custom tooltip for pie chart with appropriate units
-const CustomPieTooltip = ({ active, payload }: any) => {
+const CustomPieTooltip = ({ active, payload }: TooltipProps<number, string>) => {
   if (active && payload && payload.length) {
     const { name, value, payload: { unit } } = payload[0];
     return (
       <div className="bg-white/90 dark:bg-[#23272f]/90 p-3 border border-[#e5e7eb] dark:border-[#393a3d] rounded-lg shadow-md">
         <p className="font-semibold">{name}</p>
-        <p>Value: {Math.round(value)} {unit}</p>
+        <p>Value: {Math.round(value?? 0)} {unit}</p>
       </div>
     );
   }
   return null;
 };
 
+interface CustomRadialTooltipProps extends TooltipProps<number, string> {
+    calorieTarget: number;
+    proteinTarget: number;
+  }
 // Custom tooltip for radial chart (unchanged from your version)
-const CustomRadialTooltip = ({ active, payload, calorieTarget, proteinTarget }: any) => {
+const CustomRadialTooltip = ({ active, payload, calorieTarget, proteinTarget }: CustomRadialTooltipProps) => {
   if (active && payload && payload.length) {
     const item = payload[0].payload;
     const truncatedValue = Number(item.value).toFixed(1); // Truncate to 1 decimal place
