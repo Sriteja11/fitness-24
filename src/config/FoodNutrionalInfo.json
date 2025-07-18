@@ -1,0 +1,2381 @@
+[
+    {
+        "foodItemName": "Basmati Rice (cooked)",
+        "foodItemCalories": 130,
+        "foodItemProtein": 2.7,
+        "foodItemCarbs": 25,
+        "foodItemFat": 0.3
+    },
+    {
+        "foodItemName": "Chicken Biryani",
+        "foodItemCalories": 220,
+        "foodItemProtein": 12,
+        "foodItemCarbs": 35,
+        "foodItemFat": 4.5
+    },
+    {
+        "foodItemName": "Dal (Lentil Curry)",
+        "foodItemCalories": 116,
+        "foodItemProtein": 9,
+        "foodItemCarbs": 20,
+        "foodItemFat": 0.4
+    },
+    {
+        "foodItemName": "Chapati (Wheat Flatbread)",
+        "foodItemCalories": 297,
+        "foodItemProtein": 11,
+        "foodItemCarbs": 55,
+        "foodItemFat": 4.4
+    },
+    {
+        "foodItemName": "Paneer Tikka",
+        "foodItemCalories": 265,
+        "foodItemProtein": 18,
+        "foodItemCarbs": 8,
+        "foodItemFat": 18
+    },
+    {
+        "foodItemName": "Samosa",
+        "foodItemCalories": 308,
+        "foodItemProtein": 6,
+        "foodItemCarbs": 28,
+        "foodItemFat": 18
+    },
+    {
+        "foodItemName": "Tandoori Chicken",
+        "foodItemCalories": 165,
+        "foodItemProtein": 24,
+        "foodItemCarbs": 3,
+        "foodItemFat": 6
+    },
+    {
+        "foodItemName": "Masala Dosa",
+        "foodItemCalories": 168,
+        "foodItemProtein": 4,
+        "foodItemCarbs": 28,
+        "foodItemFat": 4
+    },
+    {
+        "foodItemName": "Butter Chicken",
+        "foodItemCalories": 180,
+        "foodItemProtein": 20,
+        "foodItemCarbs": 8,
+        "foodItemFat": 8
+    },
+    {
+        "foodItemName": "Rajma (Kidney Bean Curry)",
+        "foodItemCalories": 127,
+        "foodItemProtein": 8.7,
+        "foodItemCarbs": 22.8,
+        "foodItemFat": 0.5
+    },
+    {
+        "foodItemName": "Chole (Chickpea Curry)",
+        "foodItemCalories": 164,
+        "foodItemProtein": 8.9,
+        "foodItemCarbs": 27.4,
+        "foodItemFat": 2.6
+    },
+    {
+        "foodItemName": "Palak Paneer",
+        "foodItemCalories": 134,
+        "foodItemProtein": 7.2,
+        "foodItemCarbs": 6.8,
+        "foodItemFat": 9.3
+    },
+    {
+        "foodItemName": "Gulab Jamun",
+        "foodItemCalories": 387,
+        "foodItemProtein": 4,
+        "foodItemCarbs": 55,
+        "foodItemFat": 17
+    },
+    {
+        "foodItemName": "Lassi (Sweet)",
+        "foodItemCalories": 89,
+        "foodItemProtein": 3.2,
+        "foodItemCarbs": 13.8,
+        "foodItemFat": 2.5
+    },
+    {
+        "foodItemName": "Idli",
+        "foodItemCalories": 158,
+        "foodItemProtein": 4.2,
+        "foodItemCarbs": 32,
+        "foodItemFat": 0.8
+    },
+    {
+        "foodItemName": "Vada",
+        "foodItemCalories": 285,
+        "foodItemProtein": 6.8,
+        "foodItemCarbs": 28,
+        "foodItemFat": 16
+    },
+    {
+        "foodItemName": "Pasta (Spaghetti, cooked)",
+        "foodItemCalories": 131,
+        "foodItemProtein": 5,
+        "foodItemCarbs": 25,
+        "foodItemFat": 1.1
+    },
+    {
+        "foodItemName": "Margherita Pizza",
+        "foodItemCalories": 266,
+        "foodItemProtein": 12,
+        "foodItemCarbs": 33,
+        "foodItemFat": 10
+    },
+    {
+        "foodItemName": "Lasagna",
+        "foodItemCalories": 135,
+        "foodItemProtein": 8.2,
+        "foodItemCarbs": 13,
+        "foodItemFat": 5.6
+    },
+    {
+        "foodItemName": "Risotto",
+        "foodItemCalories": 166,
+        "foodItemProtein": 4.2,
+        "foodItemCarbs": 28,
+        "foodItemFat": 4.1
+    },
+    {
+        "foodItemName": "Carbonara",
+        "foodItemCalories": 200,
+        "foodItemProtein": 9,
+        "foodItemCarbs": 20,
+        "foodItemFat": 10
+    },
+    {
+        "foodItemName": "Minestrone Soup",
+        "foodItemCalories": 36,
+        "foodItemProtein": 1.4,
+        "foodItemCarbs": 7,
+        "foodItemFat": 0.5
+    },
+    {
+        "foodItemName": "Gelato (Vanilla)",
+        "foodItemCalories": 207,
+        "foodItemProtein": 4.3,
+        "foodItemCarbs": 21,
+        "foodItemFat": 11
+    },
+    {
+        "foodItemName": "Tiramisu",
+        "foodItemCalories": 240,
+        "foodItemProtein": 4.6,
+        "foodItemCarbs": 20,
+        "foodItemFat": 16
+    },
+    {
+        "foodItemName": "Bruschetta",
+        "foodItemCalories": 194,
+        "foodItemProtein": 6.2,
+        "foodItemCarbs": 28,
+        "foodItemFat": 6.8
+    },
+    {
+        "foodItemName": "Pesto Pasta",
+        "foodItemCalories": 185,
+        "foodItemProtein": 6.5,
+        "foodItemCarbs": 20,
+        "foodItemFat": 9
+    },
+    {
+        "foodItemName": "Gnocchi",
+        "foodItemCalories": 131,
+        "foodItemProtein": 3.5,
+        "foodItemCarbs": 29,
+        "foodItemFat": 0.2
+    },
+    {
+        "foodItemName": "Osso Buco",
+        "foodItemCalories": 172,
+        "foodItemProtein": 22,
+        "foodItemCarbs": 2,
+        "foodItemFat": 8
+    },
+    {
+        "foodItemName": "Sushi (Salmon Roll)",
+        "foodItemCalories": 179,
+        "foodItemProtein": 8.8,
+        "foodItemCarbs": 20,
+        "foodItemFat": 7
+    },
+    {
+        "foodItemName": "Ramen",
+        "foodItemCalories": 188,
+        "foodItemProtein": 9.2,
+        "foodItemCarbs": 27,
+        "foodItemFat": 5.5
+    },
+    {
+        "foodItemName": "Tempura",
+        "foodItemCalories": 340,
+        "foodItemProtein": 9.4,
+        "foodItemCarbs": 28,
+        "foodItemFat": 21
+    },
+    {
+        "foodItemName": "Miso Soup",
+        "foodItemCalories": 40,
+        "foodItemProtein": 2.2,
+        "foodItemCarbs": 5.4,
+        "foodItemFat": 1.2
+    },
+    {
+        "foodItemName": "Pad Thai",
+        "foodItemCalories": 181,
+        "foodItemProtein": 9.7,
+        "foodItemCarbs": 35,
+        "foodItemFat": 1.5
+    },
+    {
+        "foodItemName": "Green Curry (Thai)",
+        "foodItemCalories": 153,
+        "foodItemProtein": 8.5,
+        "foodItemCarbs": 12,
+        "foodItemFat": 8.8
+    },
+    {
+        "foodItemName": "Tom Yum Soup",
+        "foodItemCalories": 37,
+        "foodItemProtein": 4.8,
+        "foodItemCarbs": 2.9,
+        "foodItemFat": 1.2
+    },
+    {
+        "foodItemName": "Peking Duck",
+        "foodItemCalories": 337,
+        "foodItemProtein": 19,
+        "foodItemCarbs": 0.3,
+        "foodItemFat": 28
+    },
+    {
+        "foodItemName": "Fried Rice",
+        "foodItemCalories": 163,
+        "foodItemProtein": 4.5,
+        "foodItemCarbs": 20,
+        "foodItemFat": 7.4
+    },
+    {
+        "foodItemName": "Dim Sum (Pork)",
+        "foodItemCalories": 280,
+        "foodItemProtein": 13,
+        "foodItemCarbs": 24,
+        "foodItemFat": 15
+    },
+    {
+        "foodItemName": "Chow Mein",
+        "foodItemCalories": 151,
+        "foodItemProtein": 4.5,
+        "foodItemCarbs": 23,
+        "foodItemFat": 5.1
+    },
+    {
+        "foodItemName": "Tacos (Beef)",
+        "foodItemCalories": 226,
+        "foodItemProtein": 12,
+        "foodItemCarbs": 18,
+        "foodItemFat": 12
+    },
+    {
+        "foodItemName": "Quesadilla",
+        "foodItemCalories": 323,
+        "foodItemProtein": 15,
+        "foodItemCarbs": 26,
+        "foodItemFat": 18
+    },
+    {
+        "foodItemName": "Guacamole",
+        "foodItemCalories": 160,
+        "foodItemProtein": 2,
+        "foodItemCarbs": 8.5,
+        "foodItemFat": 15
+    },
+    {
+        "foodItemName": "Burritos",
+        "foodItemCalories": 206,
+        "foodItemProtein": 9.4,
+        "foodItemCarbs": 26,
+        "foodItemFat": 7.7
+    },
+    {
+        "foodItemName": "Paella",
+        "foodItemCalories": 172,
+        "foodItemProtein": 8.2,
+        "foodItemCarbs": 28,
+        "foodItemFat": 3.5
+    },
+    {
+        "foodItemName": "Gazpacho",
+        "foodItemCalories": 27,
+        "foodItemProtein": 1.2,
+        "foodItemCarbs": 5.8,
+        "foodItemFat": 0.2
+    },
+    {
+        "foodItemName": "Hamburger",
+        "foodItemCalories": 254,
+        "foodItemProtein": 13,
+        "foodItemCarbs": 31,
+        "foodItemFat": 9.5
+    },
+    {
+        "foodItemName": "Hot Dog",
+        "foodItemCalories": 290,
+        "foodItemProtein": 10,
+        "foodItemCarbs": 2.5,
+        "foodItemFat": 26
+    },
+    {
+        "foodItemName": "French Fries",
+        "foodItemCalories": 365,
+        "foodItemProtein": 4,
+        "foodItemCarbs": 63,
+        "foodItemFat": 11
+    },
+    {
+        "foodItemName": "Caesar Salad",
+        "foodItemCalories": 158,
+        "foodItemProtein": 7.5,
+        "foodItemCarbs": 5.5,
+        "foodItemFat": 13
+    },
+    {
+        "foodItemName": "Fried Chicken",
+        "foodItemCalories": 320,
+        "foodItemProtein": 19,
+        "foodItemCarbs": 8.5,
+        "foodItemFat": 24
+    },
+    {
+        "foodItemName": "Mac and Cheese",
+        "foodItemCalories": 164,
+        "foodItemProtein": 7.3,
+        "foodItemCarbs": 20,
+        "foodItemFat": 6.2
+    },
+    {
+        "foodItemName": "Couscous",
+        "foodItemCalories": 112,
+        "foodItemProtein": 3.8,
+        "foodItemCarbs": 23,
+        "foodItemFat": 0.2
+    },
+    {
+        "foodItemName": "Falafel",
+        "foodItemCalories": 333,
+        "foodItemProtein": 13,
+        "foodItemCarbs": 32,
+        "foodItemFat": 18
+    },
+    {
+        "foodItemName": "Hummus",
+        "foodItemCalories": 166,
+        "foodItemProtein": 8,
+        "foodItemCarbs": 14,
+        "foodItemFat": 10
+    },
+    {
+        "foodItemName": "Shawarma",
+        "foodItemCalories": 300,
+        "foodItemProtein": 26,
+        "foodItemCarbs": 6,
+        "foodItemFat": 18
+    },
+    {
+        "foodItemName": "Kebab",
+        "foodItemCalories": 290,
+        "foodItemProtein": 25,
+        "foodItemCarbs": 4,
+        "foodItemFat": 19
+    },
+    {
+        "foodItemName": "Baklava",
+        "foodItemCalories": 307,
+        "foodItemProtein": 4.2,
+        "foodItemCarbs": 21,
+        "foodItemFat": 23
+    },
+    {
+        "foodItemName": "Croissant",
+        "foodItemCalories": 406,
+        "foodItemProtein": 8.2,
+        "foodItemCarbs": 45,
+        "foodItemFat": 21
+    },
+    {
+        "foodItemName": "Crepe",
+        "foodItemCalories": 112,
+        "foodItemProtein": 4.5,
+        "foodItemCarbs": 13,
+        "foodItemFat": 4.5
+    },
+    {
+        "foodItemName": "Baguette",
+        "foodItemCalories": 272,
+        "foodItemProtein": 8.9,
+        "foodItemCarbs": 55,
+        "foodItemFat": 1.6
+    },
+    {
+        "foodItemName": "Ratatouille",
+        "foodItemCalories": 32,
+        "foodItemProtein": 1.2,
+        "foodItemCarbs": 7.7,
+        "foodItemFat": 0.2
+    },
+    {
+        "foodItemName": "Quiche",
+        "foodItemCalories": 243,
+        "foodItemProtein": 10,
+        "foodItemCarbs": 14,
+        "foodItemFat": 17
+    },
+    {
+        "foodItemName": "Apple Pie",
+        "foodItemCalories": 237,
+        "foodItemProtein": 2.2,
+        "foodItemCarbs": 35,
+        "foodItemFat": 11
+    },
+    {
+        "foodItemName": "Cheesecake",
+        "foodItemCalories": 321,
+        "foodItemProtein": 5.5,
+        "foodItemCarbs": 26,
+        "foodItemFat": 23
+    },
+    {
+        "foodItemName": "Chocolate Cake",
+        "foodItemCalories": 371,
+        "foodItemProtein": 5,
+        "foodItemCarbs": 51,
+        "foodItemFat": 17
+    },
+    {
+        "foodItemName": "Ice Cream (Vanilla)",
+        "foodItemCalories": 207,
+        "foodItemProtein": 3.5,
+        "foodItemCarbs": 24,
+        "foodItemFat": 11
+    },
+    {
+        "foodItemName": "Pancakes",
+        "foodItemCalories": 227,
+        "foodItemProtein": 6.2,
+        "foodItemCarbs": 28,
+        "foodItemFat": 10
+    },
+    {
+        "foodItemName": "Waffles",
+        "foodItemCalories": 291,
+        "foodItemProtein": 5.9,
+        "foodItemCarbs": 37,
+        "foodItemFat": 14
+    },
+    {
+        "foodItemName": "Doughnuts",
+        "foodItemCalories": 452,
+        "foodItemProtein": 4.9,
+        "foodItemCarbs": 51,
+        "foodItemFat": 25
+    },
+    {
+        "foodItemName": "Bagel",
+        "foodItemCalories": 245,
+        "foodItemProtein": 10,
+        "foodItemCarbs": 48,
+        "foodItemFat": 1.5
+    },
+    {
+        "foodItemName": "Muffin (Blueberry)",
+        "foodItemCalories": 313,
+        "foodItemProtein": 6,
+        "foodItemCarbs": 54,
+        "foodItemFat": 7
+    },
+    {
+        "foodItemName": "Cereal (Cornflakes)",
+        "foodItemCalories": 357,
+        "foodItemProtein": 7.5,
+        "foodItemCarbs": 84,
+        "foodItemFat": 0.4
+    },
+    {
+        "foodItemName": "Oatmeal",
+        "foodItemCalories": 68,
+        "foodItemProtein": 2.4,
+        "foodItemCarbs": 12,
+        "foodItemFat": 1.4
+    },
+    {
+        "foodItemName": "Yogurt (Greek)",
+        "foodItemCalories": 59,
+        "foodItemProtein": 10,
+        "foodItemCarbs": 3.6,
+        "foodItemFat": 0.4
+    },
+    {
+        "foodItemName": "Avocado",
+        "foodItemCalories": 160,
+        "foodItemProtein": 2,
+        "foodItemCarbs": 8.5,
+        "foodItemFat": 15
+    },
+    {
+        "foodItemName": "Banana",
+        "foodItemCalories": 89,
+        "foodItemProtein": 1.1,
+        "foodItemCarbs": 23,
+        "foodItemFat": 0.3
+    },
+    {
+        "foodItemName": "Apple",
+        "foodItemCalories": 52,
+        "foodItemProtein": 0.3,
+        "foodItemCarbs": 14,
+        "foodItemFat": 0.2
+    },
+    {
+        "foodItemName": "Orange",
+        "foodItemCalories": 47,
+        "foodItemProtein": 0.9,
+        "foodItemCarbs": 12,
+        "foodItemFat": 0.1
+    },
+    {
+        "foodItemName": "Grapes",
+        "foodItemCalories": 62,
+        "foodItemProtein": 0.6,
+        "foodItemCarbs": 16,
+        "foodItemFat": 0.2
+    },
+    {
+        "foodItemName": "Strawberries",
+        "foodItemCalories": 32,
+        "foodItemProtein": 0.7,
+        "foodItemCarbs": 7.7,
+        "foodItemFat": 0.3
+    },
+    {
+        "foodItemName": "Blueberries",
+        "foodItemCalories": 57,
+        "foodItemProtein": 0.7,
+        "foodItemCarbs": 14,
+        "foodItemFat": 0.3
+    },
+    {
+        "foodItemName": "Mango",
+        "foodItemCalories": 60,
+        "foodItemProtein": 0.8,
+        "foodItemCarbs": 15,
+        "foodItemFat": 0.4
+    },
+    {
+        "foodItemName": "Pineapple",
+        "foodItemCalories": 50,
+        "foodItemProtein": 0.5,
+        "foodItemCarbs": 13,
+        "foodItemFat": 0.1
+    },
+    {
+        "foodItemName": "Watermelon",
+        "foodItemCalories": 30,
+        "foodItemProtein": 0.6,
+        "foodItemCarbs": 8,
+        "foodItemFat": 0.2
+    },
+    {
+        "foodItemName": "Coconut Water",
+        "foodItemCalories": 19,
+        "foodItemProtein": 0.7,
+        "foodItemCarbs": 3.7,
+        "foodItemFat": 0.2
+    },
+    {
+        "foodItemName": "Green Tea",
+        "foodItemCalories": 1,
+        "foodItemProtein": 0.2,
+        "foodItemCarbs": 0,
+        "foodItemFat": 0
+    },
+    {
+        "foodItemName": "Coffee (Black)",
+        "foodItemCalories": 2,
+        "foodItemProtein": 0.3,
+        "foodItemCarbs": 0,
+        "foodItemFat": 0
+    },
+    {
+        "foodItemName": "Milk (Whole)",
+        "foodItemCalories": 42,
+        "foodItemProtein": 3.4,
+        "foodItemCarbs": 5,
+        "foodItemFat": 1
+    },
+    {
+        "foodItemName": "Almond Milk",
+        "foodItemCalories": 17,
+        "foodItemProtein": 0.6,
+        "foodItemCarbs": 1.5,
+        "foodItemFat": 1.1
+    },
+    {
+        "foodItemName": "Orange Juice",
+        "foodItemCalories": 45,
+        "foodItemProtein": 0.7,
+        "foodItemCarbs": 10,
+        "foodItemFat": 0.2
+    },
+    {
+        "foodItemName": "Broccoli",
+        "foodItemCalories": 34,
+        "foodItemProtein": 2.8,
+        "foodItemCarbs": 7,
+        "foodItemFat": 0.4
+    },
+    {
+        "foodItemName": "Spinach",
+        "foodItemCalories": 23,
+        "foodItemProtein": 2.9,
+        "foodItemCarbs": 3.6,
+        "foodItemFat": 0.4
+    },
+    {
+        "foodItemName": "Carrots",
+        "foodItemCalories": 41,
+        "foodItemProtein": 0.9,
+        "foodItemCarbs": 10,
+        "foodItemFat": 0.2
+    },
+    {
+        "foodItemName": "Tomatoes",
+        "foodItemCalories": 18,
+        "foodItemProtein": 0.9,
+        "foodItemCarbs": 3.9,
+        "foodItemFat": 0.2
+    },
+    {
+        "foodItemName": "Cucumber",
+        "foodItemCalories": 15,
+        "foodItemProtein": 0.7,
+        "foodItemCarbs": 4,
+        "foodItemFat": 0.1
+    },
+    {
+        "foodItemName": "Bell Peppers",
+        "foodItemCalories": 31,
+        "foodItemProtein": 1,
+        "foodItemCarbs": 7,
+        "foodItemFat": 0.3
+    },
+    {
+        "foodItemName": "Onions",
+        "foodItemCalories": 40,
+        "foodItemProtein": 1.1,
+        "foodItemCarbs": 9,
+        "foodItemFat": 0.1
+    },
+    {
+        "foodItemName": "Garlic",
+        "foodItemCalories": 149,
+        "foodItemProtein": 6.4,
+        "foodItemCarbs": 33,
+        "foodItemFat": 0.5
+    },
+    {
+        "foodItemName": "Ginger",
+        "foodItemCalories": 80,
+        "foodItemProtein": 1.8,
+        "foodItemCarbs": 18,
+        "foodItemFat": 0.8
+    },
+    {
+        "foodItemName": "Potatoes",
+        "foodItemCalories": 77,
+        "foodItemProtein": 2,
+        "foodItemCarbs": 17,
+        "foodItemFat": 0.1
+    },
+    {
+        "foodItemName": "Sweet Potatoes",
+        "foodItemCalories": 86,
+        "foodItemProtein": 1.6,
+        "foodItemCarbs": 20,
+        "foodItemFat": 0.1
+    },
+    {
+        "foodItemName": "Quinoa (cooked)",
+        "foodItemCalories": 120,
+        "foodItemProtein": 4.4,
+        "foodItemCarbs": 22,
+        "foodItemFat": 1.9
+    },
+    {
+        "foodItemName": "Brown Rice (cooked)",
+        "foodItemCalories": 111,
+        "foodItemProtein": 2.6,
+        "foodItemCarbs": 23,
+        "foodItemFat": 0.9
+    },
+    {
+        "foodItemName": "Whole Wheat Bread",
+        "foodItemCalories": 247,
+        "foodItemProtein": 13,
+        "foodItemCarbs": 41,
+        "foodItemFat": 4.2
+    },
+    {
+        "foodItemName": "Almonds",
+        "foodItemCalories": 579,
+        "foodItemProtein": 21,
+        "foodItemCarbs": 22,
+        "foodItemFat": 50
+    },
+    {
+        "foodItemName": "Walnuts",
+        "foodItemCalories": 654,
+        "foodItemProtein": 15,
+        "foodItemCarbs": 14,
+        "foodItemFat": 65
+    },
+    {
+        "foodItemName": "Cashews",
+        "foodItemCalories": 553,
+        "foodItemProtein": 18,
+        "foodItemCarbs": 30,
+        "foodItemFat": 44
+    },
+    {
+        "foodItemName": "Peanuts",
+        "foodItemCalories": 567,
+        "foodItemProtein": 26,
+        "foodItemCarbs": 16,
+        "foodItemFat": 49
+    },
+    {
+        "foodItemName": "Sunflower Seeds",
+        "foodItemCalories": 584,
+        "foodItemProtein": 21,
+        "foodItemCarbs": 20,
+        "foodItemFat": 51
+    },
+    {
+        "foodItemName": "Chia Seeds",
+        "foodItemCalories": 486,
+        "foodItemProtein": 17,
+        "foodItemCarbs": 42,
+        "foodItemFat": 31
+    },
+    {
+        "foodItemName": "Flax Seeds",
+        "foodItemCalories": 534,
+        "foodItemProtein": 18,
+        "foodItemCarbs": 29,
+        "foodItemFat": 42
+    },
+    {
+        "foodItemName": "Salmon (cooked)",
+        "foodItemCalories": 206,
+        "foodItemProtein": 22,
+        "foodItemCarbs": 0,
+        "foodItemFat": 12
+    },
+    {
+        "foodItemName": "Tuna (canned)",
+        "foodItemCalories": 116,
+        "foodItemProtein": 26,
+        "foodItemCarbs": 0,
+        "foodItemFat": 1
+    },
+    {
+        "foodItemName": "Chicken Breast (cooked)",
+        "foodItemCalories": 165,
+        "foodItemProtein": 31,
+        "foodItemCarbs": 0,
+        "foodItemFat": 3.6
+    },
+    {
+        "foodItemName": "Beef (lean, cooked)",
+        "foodItemCalories": 250,
+        "foodItemProtein": 26,
+        "foodItemCarbs": 0,
+        "foodItemFat": 15
+    },
+    {
+        "foodItemName": "Pork (lean, cooked)",
+        "foodItemCalories": 242,
+        "foodItemProtein": 27,
+        "foodItemCarbs": 0,
+        "foodItemFat": 14
+    },
+    {
+        "foodItemName": "Eggs",
+        "foodItemCalories": 155,
+        "foodItemProtein": 13,
+        "foodItemCarbs": 1.1,
+        "foodItemFat": 11
+    },
+    {
+        "foodItemName": "Tofu",
+        "foodItemCalories": 76,
+        "foodItemProtein": 8,
+        "foodItemCarbs": 1.9,
+        "foodItemFat": 4.8
+    },
+    {
+        "foodItemName": "Black Beans",
+        "foodItemCalories": 132,
+        "foodItemProtein": 8.9,
+        "foodItemCarbs": 24,
+        "foodItemFat": 0.5
+    },
+    {
+        "foodItemName": "Chickpeas",
+        "foodItemCalories": 164,
+        "foodItemProtein": 8.9,
+        "foodItemCarbs": 27,
+        "foodItemFat": 2.6
+    },
+    {
+        "foodItemName": "Lentils",
+        "foodItemCalories": 116,
+        "foodItemProtein": 9,
+        "foodItemCarbs": 20,
+        "foodItemFat": 0.4
+    },
+    {
+        "foodItemName": "Cheese (Cheddar)",
+        "foodItemCalories": 402,
+        "foodItemProtein": 25,
+        "foodItemCarbs": 1.3,
+        "foodItemFat": 33
+    },
+    {
+        "foodItemName": "Mozzarella Cheese",
+        "foodItemCalories": 280,
+        "foodItemProtein": 28,
+        "foodItemCarbs": 3.1,
+        "foodItemFat": 17
+    },
+    {
+        "foodItemName": "Butter",
+        "foodItemCalories": 717,
+        "foodItemProtein": 0.9,
+        "foodItemCarbs": 0.1,
+        "foodItemFat": 81
+    },
+    {
+        "foodItemName": "Olive Oil",
+        "foodItemCalories": 884,
+        "foodItemProtein": 0,
+        "foodItemCarbs": 0,
+        "foodItemFat": 100
+    },
+    {
+        "foodItemName": "Coconut Oil",
+        "foodItemCalories": 862,
+        "foodItemProtein": 0,
+        "foodItemCarbs": 0,
+        "foodItemFat": 100
+    },
+    {
+        "foodItemName": "Honey",
+        "foodItemCalories": 304,
+        "foodItemProtein": 0.3,
+        "foodItemCarbs": 82,
+        "foodItemFat": 0
+    },
+    {
+        "foodItemName": "Maple Syrup",
+        "foodItemCalories": 260,
+        "foodItemProtein": 0,
+        "foodItemCarbs": 67,
+        "foodItemFat": 0.1
+    },
+    {
+        "foodItemName": "Dark Chocolate (70%)",
+        "foodItemCalories": 546,
+        "foodItemProtein": 7.9,
+        "foodItemCarbs": 46,
+        "foodItemFat": 31
+    },
+    {
+        "foodItemName": "Aloo Gobi",
+        "foodItemCalories": 95,
+        "foodItemProtein": 3.2,
+        "foodItemCarbs": 15,
+        "foodItemFat": 3.1
+    },
+    {
+        "foodItemName": "Bhindi Masala",
+        "foodItemCalories": 88,
+        "foodItemProtein": 2.8,
+        "foodItemCarbs": 12,
+        "foodItemFat": 3.5
+    },
+    {
+        "foodItemName": "Matar Paneer",
+        "foodItemCalories": 148,
+        "foodItemProtein": 8.5,
+        "foodItemCarbs": 10,
+        "foodItemFat": 9.2
+    },
+    {
+        "foodItemName": "Baingan Bharta",
+        "foodItemCalories": 67,
+        "foodItemProtein": 1.8,
+        "foodItemCarbs": 8.2,
+        "foodItemFat": 3.5
+    },
+    {
+        "foodItemName": "Kadai Chicken",
+        "foodItemCalories": 195,
+        "foodItemProtein": 22,
+        "foodItemCarbs": 6,
+        "foodItemFat": 9
+    },
+    {
+        "foodItemName": "Fish Curry",
+        "foodItemCalories": 142,
+        "foodItemProtein": 18,
+        "foodItemCarbs": 4.5,
+        "foodItemFat": 6
+    },
+    {
+        "foodItemName": "Mutton Curry",
+        "foodItemCalories": 225,
+        "foodItemProtein": 20,
+        "foodItemCarbs": 5,
+        "foodItemFat": 14
+    },
+    {
+        "foodItemName": "Poha",
+        "foodItemCalories": 158,
+        "foodItemProtein": 3.2,
+        "foodItemCarbs": 32,
+        "foodItemFat": 2.8
+    },
+    {
+        "foodItemName": "Upma",
+        "foodItemCalories": 145,
+        "foodItemProtein": 4.1,
+        "foodItemCarbs": 28,
+        "foodItemFat": 2.5
+    },
+    {
+        "foodItemName": "Dhokla",
+        "foodItemCalories": 160,
+        "foodItemProtein": 5.5,
+        "foodItemCarbs": 30,
+        "foodItemFat": 2.8
+    },
+    {
+        "foodItemName": "Pav Bhaji",
+        "foodItemCalories": 180,
+        "foodItemProtein": 5.2,
+        "foodItemCarbs": 28,
+        "foodItemFat": 6
+    },
+    {
+        "foodItemName": "Vada Pav",
+        "foodItemCalories": 295,
+        "foodItemProtein": 8.5,
+        "foodItemCarbs": 45,
+        "foodItemFat": 9
+    },
+    {
+        "foodItemName": "Misal Pav",
+        "foodItemCalories": 210,
+        "foodItemProtein": 12,
+        "foodItemCarbs": 35,
+        "foodItemFat": 4.5
+    },
+    {
+        "foodItemName": "Khichdi",
+        "foodItemCalories": 120,
+        "foodItemProtein": 4.8,
+        "foodItemCarbs": 24,
+        "foodItemFat": 0.8
+    },
+    {
+        "foodItemName": "Pulao",
+        "foodItemCalories": 165,
+        "foodItemProtein": 4.2,
+        "foodItemCarbs": 32,
+        "foodItemFat": 2.8
+    },
+    {
+        "foodItemName": "Rasgulla",
+        "foodItemCalories": 186,
+        "foodItemProtein": 4.6,
+        "foodItemCarbs": 32,
+        "foodItemFat": 4.8
+    },
+    {
+        "foodItemName": "Kulfi",
+        "foodItemCalories": 168,
+        "foodItemProtein": 4.2,
+        "foodItemCarbs": 22,
+        "foodItemFat": 7.5
+    },
+    {
+        "foodItemName": "Jalebi",
+        "foodItemCalories": 414,
+        "foodItemProtein": 3.2,
+        "foodItemCarbs": 70,
+        "foodItemFat": 14
+    },
+    {
+        "foodItemName": "Laddu",
+        "foodItemCalories": 395,
+        "foodItemProtein": 8.5,
+        "foodItemCarbs": 55,
+        "foodItemFat": 16
+    },
+    {
+        "foodItemName": "Halwa",
+        "foodItemCalories": 285,
+        "foodItemProtein": 5.8,
+        "foodItemCarbs": 45,
+        "foodItemFat": 10
+    },
+    {
+        "foodItemName": "Prosciutto",
+        "foodItemCalories": 245,
+        "foodItemProtein": 25,
+        "foodItemCarbs": 0,
+        "foodItemFat": 16
+    },
+    {
+        "foodItemName": "Cappelletti",
+        "foodItemCalories": 155,
+        "foodItemProtein": 6.8,
+        "foodItemCarbs": 24,
+        "foodItemFat": 3.2
+    },
+    {
+        "foodItemName": "Ravioli",
+        "foodItemCalories": 175,
+        "foodItemProtein": 7.5,
+        "foodItemCarbs": 26,
+        "foodItemFat": 4.8
+    },
+    {
+        "foodItemName": "Focaccia",
+        "foodItemCalories": 271,
+        "foodItemProtein": 7.2,
+        "foodItemCarbs": 51,
+        "foodItemFat": 4.6
+    },
+    {
+        "foodItemName": "Cannoli",
+        "foodItemCalories": 302,
+        "foodItemProtein": 6.8,
+        "foodItemCarbs": 28,
+        "foodItemFat": 18
+    },
+    {
+        "foodItemName": "Panna Cotta",
+        "foodItemCalories": 185,
+        "foodItemProtein": 3.8,
+        "foodItemCarbs": 18,
+        "foodItemFat": 11
+    },
+    {
+        "foodItemName": "Antipasto",
+        "foodItemCalories": 220,
+        "foodItemProtein": 12,
+        "foodItemCarbs": 8,
+        "foodItemFat": 16
+    },
+    {
+        "foodItemName": "Calzone",
+        "foodItemCalories": 245,
+        "foodItemProtein": 11,
+        "foodItemCarbs": 28,
+        "foodItemFat": 10
+    },
+    {
+        "foodItemName": "Arancini",
+        "foodItemCalories": 265,
+        "foodItemProtein": 8.5,
+        "foodItemCarbs": 32,
+        "foodItemFat": 12
+    },
+    {
+        "foodItemName": "Polenta",
+        "foodItemCalories": 85,
+        "foodItemProtein": 1.5,
+        "foodItemCarbs": 18,
+        "foodItemFat": 0.6
+    },
+    {
+        "foodItemName": "Borscht",
+        "foodItemCalories": 42,
+        "foodItemProtein": 1.5,
+        "foodItemCarbs": 8.5,
+        "foodItemFat": 0.8
+    },
+    {
+        "foodItemName": "Pierogi",
+        "foodItemCalories": 221,
+        "foodItemProtein": 6.8,
+        "foodItemCarbs": 38,
+        "foodItemFat": 4.5
+    },
+    {
+        "foodItemName": "Goulash",
+        "foodItemCalories": 156,
+        "foodItemProtein": 12,
+        "foodItemCarbs": 8,
+        "foodItemFat": 9
+    },
+    {
+        "foodItemName": "Schnitzel",
+        "foodItemCalories": 285,
+        "foodItemProtein": 22,
+        "foodItemCarbs": 12,
+        "foodItemFat": 16
+    },
+    {
+        "foodItemName": "Sauerkraut",
+        "foodItemCalories": 19,
+        "foodItemProtein": 0.9,
+        "foodItemCarbs": 4.3,
+        "foodItemFat": 0.1
+    },
+    {
+        "foodItemName": "Bratwurst",
+        "foodItemCalories": 297,
+        "foodItemProtein": 12,
+        "foodItemCarbs": 2,
+        "foodItemFat": 26
+    },
+    {
+        "foodItemName": "Strudel",
+        "foodItemCalories": 258,
+        "foodItemProtein": 4.2,
+        "foodItemCarbs": 38,
+        "foodItemFat": 10
+    },
+    {
+        "foodItemName": "Kimchi",
+        "foodItemCalories": 15,
+        "foodItemProtein": 1.1,
+        "foodItemCarbs": 2.4,
+        "foodItemFat": 0.5
+    },
+    {
+        "foodItemName": "Bibimbap",
+        "foodItemCalories": 185,
+        "foodItemProtein": 8.5,
+        "foodItemCarbs": 28,
+        "foodItemFat": 5.2
+    },
+    {
+        "foodItemName": "Korean BBQ",
+        "foodItemCalories": 295,
+        "foodItemProtein": 26,
+        "foodItemCarbs": 4,
+        "foodItemFat": 19
+    },
+    {
+        "foodItemName": "Bulgogi",
+        "foodItemCalories": 225,
+        "foodItemProtein": 18,
+        "foodItemCarbs": 12,
+        "foodItemFat": 12
+    },
+    {
+        "foodItemName": "Yakitori",
+        "foodItemCalories": 185,
+        "foodItemProtein": 19,
+        "foodItemCarbs": 8,
+        "foodItemFat": 8.5
+    },
+    {
+        "foodItemName": "Teriyaki Chicken",
+        "foodItemCalories": 175,
+        "foodItemProtein": 22,
+        "foodItemCarbs": 12,
+        "foodItemFat": 4.5
+    },
+    {
+        "foodItemName": "Udon",
+        "foodItemCalories": 95,
+        "foodItemProtein": 2.8,
+        "foodItemCarbs": 19,
+        "foodItemFat": 0.8
+    },
+    {
+        "foodItemName": "Soba",
+        "foodItemCalories": 99,
+        "foodItemProtein": 5.1,
+        "foodItemCarbs": 20,
+        "foodItemFat": 0.4
+    },
+    {
+        "foodItemName": "Onigiri",
+        "foodItemCalories": 155,
+        "foodItemProtein": 2.8,
+        "foodItemCarbs": 35,
+        "foodItemFat": 0.5
+    },
+    {
+        "foodItemName": "Mochi",
+        "foodItemCalories": 242,
+        "foodItemProtein": 4.2,
+        "foodItemCarbs": 52,
+        "foodItemFat": 0.6
+    },
+    {
+        "foodItemName": "Dumplings (Pork)",
+        "foodItemCalories": 255,
+        "foodItemProtein": 12,
+        "foodItemCarbs": 28,
+        "foodItemFat": 10
+    },
+    {
+        "foodItemName": "Spring Rolls",
+        "foodItemCalories": 185,
+        "foodItemProtein": 6.8,
+        "foodItemCarbs": 25,
+        "foodItemFat": 6.5
+    },
+    {
+        "foodItemName": "Sweet and Sour Pork",
+        "foodItemCalories": 265,
+        "foodItemProtein": 15,
+        "foodItemCarbs": 32,
+        "foodItemFat": 8.5
+    },
+    {
+        "foodItemName": "Kung Pao Chicken",
+        "foodItemCalories": 185,
+        "foodItemProtein": 18,
+        "foodItemCarbs": 12,
+        "foodItemFat": 8
+    },
+    {
+        "foodItemName": "Mapo Tofu",
+        "foodItemCalories": 145,
+        "foodItemProtein": 8.5,
+        "foodItemCarbs": 6,
+        "foodItemFat": 10
+    },
+    {
+        "foodItemName": "Hot Pot",
+        "foodItemCalories": 168,
+        "foodItemProtein": 12,
+        "foodItemCarbs": 8,
+        "foodItemFat": 9.5
+    },
+    {
+        "foodItemName": "Wontons",
+        "foodItemCalories": 245,
+        "foodItemProtein": 9.5,
+        "foodItemCarbs": 28,
+        "foodItemFat": 10
+    },
+    {
+        "foodItemName": "Congee",
+        "foodItemCalories": 85,
+        "foodItemProtein": 1.8,
+        "foodItemCarbs": 18,
+        "foodItemFat": 0.5
+    },
+    {
+        "foodItemName": "Satay",
+        "foodItemCalories": 195,
+        "foodItemProtein": 18,
+        "foodItemCarbs": 8,
+        "foodItemFat": 10
+    },
+    {
+        "foodItemName": "Rendang",
+        "foodItemCalories": 285,
+        "foodItemProtein": 22,
+        "foodItemCarbs": 6,
+        "foodItemFat": 19
+    },
+    {
+        "foodItemName": "Nasi Goreng",
+        "foodItemCalories": 175,
+        "foodItemProtein": 6.8,
+        "foodItemCarbs": 28,
+        "foodItemFat": 4.5
+    },
+    {
+        "foodItemName": "Pho",
+        "foodItemCalories": 125,
+        "foodItemProtein": 8.5,
+        "foodItemCarbs": 18,
+        "foodItemFat": 2.8
+    },
+    {
+        "foodItemName": "Banh Mi",
+        "foodItemCalories": 285,
+        "foodItemProtein": 15,
+        "foodItemCarbs": 35,
+        "foodItemFat": 9
+    },
+    {
+        "foodItemName": "Som Tam",
+        "foodItemCalories": 75,
+        "foodItemProtein": 3.2,
+        "foodItemCarbs": 15,
+        "foodItemFat": 1.5
+    },
+    {
+        "foodItemName": "Massaman Curry",
+        "foodItemCalories": 165,
+        "foodItemProtein": 12,
+        "foodItemCarbs": 14,
+        "foodItemFat": 8.5
+    },
+    {
+        "foodItemName": "Mango Sticky Rice",
+        "foodItemCalories": 185,
+        "foodItemProtein": 3.2,
+        "foodItemCarbs": 38,
+        "foodItemFat": 3.8
+    },
+    {
+        "foodItemName": "Enchiladas",
+        "foodItemCalories": 245,
+        "foodItemProtein": 12,
+        "foodItemCarbs": 28,
+        "foodItemFat": 10
+    },
+    {
+        "foodItemName": "Nachos",
+        "foodItemCalories": 346,
+        "foodItemProtein": 9.8,
+        "foodItemCarbs": 36,
+        "foodItemFat": 19
+    },
+    {
+        "foodItemName": "Tamales",
+        "foodItemCalories": 285,
+        "foodItemProtein": 8.5,
+        "foodItemCarbs": 42,
+        "foodItemFat": 10
+    },
+    {
+        "foodItemName": "Churros",
+        "foodItemCalories": 355,
+        "foodItemProtein": 5.2,
+        "foodItemCarbs": 45,
+        "foodItemFat": 17
+    },
+    {
+        "foodItemName": "Tres Leches Cake",
+        "foodItemCalories": 245,
+        "foodItemProtein": 5.8,
+        "foodItemCarbs": 32,
+        "foodItemFat": 11
+    },
+    {
+        "foodItemName": "Empanadas",
+        "foodItemCalories": 295,
+        "foodItemProtein": 8.5,
+        "foodItemCarbs": 32,
+        "foodItemFat": 15
+    },
+    {
+        "foodItemName": "Ceviche",
+        "foodItemCalories": 125,
+        "foodItemProtein": 18,
+        "foodItemCarbs": 8,
+        "foodItemFat": 2.5
+    },
+    {
+        "foodItemName": "Chimichurri",
+        "foodItemCalories": 145,
+        "foodItemProtein": 1.2,
+        "foodItemCarbs": 3.5,
+        "foodItemFat": 15
+    },
+    {
+        "foodItemName": "Flan",
+        "foodItemCalories": 185,
+        "foodItemProtein": 4.2,
+        "foodItemCarbs": 28,
+        "foodItemFat": 6.5
+    },
+    {
+        "foodItemName": "Arepas",
+        "foodItemCalories": 165,
+        "foodItemProtein": 4.8,
+        "foodItemCarbs": 32,
+        "foodItemFat": 2.8
+    },
+    {
+        "foodItemName": "Mole",
+        "foodItemCalories": 185,
+        "foodItemProtein": 6.5,
+        "foodItemCarbs": 12,
+        "foodItemFat": 13
+    },
+    {
+        "foodItemName": "Plantains (fried)",
+        "foodItemCalories": 215,
+        "foodItemProtein": 1.5,
+        "foodItemCarbs": 35,
+        "foodItemFat": 8.5
+    },
+    {
+        "foodItemName": "Black Beans and Rice",
+        "foodItemCalories": 145,
+        "foodItemProtein": 6.8,
+        "foodItemCarbs": 28,
+        "foodItemFat": 1.5
+    },
+    {
+        "foodItemName": "Tabbouleh",
+        "foodItemCalories": 95,
+        "foodItemProtein": 3.2,
+        "foodItemCarbs": 18,
+        "foodItemFat": 1.8
+    },
+    {
+        "foodItemName": "Dolmas",
+        "foodItemCalories": 158,
+        "foodItemProtein": 3.8,
+        "foodItemCarbs": 28,
+        "foodItemFat": 4.2
+    },
+    {
+        "foodItemName": "Baba Ganoush",
+        "foodItemCalories": 125,
+        "foodItemProtein": 4.2,
+        "foodItemCarbs": 9,
+        "foodItemFat": 8.5
+    },
+    {
+        "foodItemName": "Turkish Delight",
+        "foodItemCalories": 320,
+        "foodItemProtein": 0.8,
+        "foodItemCarbs": 80,
+        "foodItemFat": 0.2
+    },
+    {
+        "foodItemName": "Tagine",
+        "foodItemCalories": 185,
+        "foodItemProtein": 12,
+        "foodItemCarbs": 15,
+        "foodItemFat": 8.5
+    },
+    {
+        "foodItemName": "Injera",
+        "foodItemCalories": 78,
+        "foodItemProtein": 3.2,
+        "foodItemCarbs": 15,
+        "foodItemFat": 0.8
+    },
+    {
+        "foodItemName": "Couscous Salad",
+        "foodItemCalories": 125,
+        "foodItemProtein": 4.2,
+        "foodItemCarbs": 24,
+        "foodItemFat": 1.5
+    },
+    {
+        "foodItemName": "Shakshuka",
+        "foodItemCalories": 145,
+        "foodItemProtein": 8.5,
+        "foodItemCarbs": 12,
+        "foodItemFat": 7.5
+    },
+    {
+        "foodItemName": "Moussaka",
+        "foodItemCalories": 185,
+        "foodItemProtein": 9.5,
+        "foodItemCarbs": 15,
+        "foodItemFat": 10
+    },
+    {
+        "foodItemName": "Spanakopita",
+        "foodItemCalories": 245,
+        "foodItemProtein": 8.5,
+        "foodItemCarbs": 22,
+        "foodItemFat": 14
+    },
+    {
+        "foodItemName": "Tzatziki",
+        "foodItemCalories": 85,
+        "foodItemProtein": 4.2,
+        "foodItemCarbs": 6,
+        "foodItemFat": 5.5
+    },
+    {
+        "foodItemName": "Greek Salad",
+        "foodItemCalories": 125,
+        "foodItemProtein": 4.8,
+        "foodItemCarbs": 8,
+        "foodItemFat": 8.5
+    },
+    {
+        "foodItemName": "Souvlaki",
+        "foodItemCalories": 245,
+        "foodItemProtein": 22,
+        "foodItemCarbs": 5,
+        "foodItemFat": 15
+    },
+    {
+        "foodItemName": "Pita Bread",
+        "foodItemCalories": 275,
+        "foodItemProtein": 9.1,
+        "foodItemCarbs": 55,
+        "foodItemFat": 1.2
+    },
+    {
+        "foodItemName": "Chicken Vindaloo",
+        "foodItemCalories": 298,
+        "foodItemProtein": 30.7,
+        "foodItemCarbs": 18.9,
+        "foodItemFat": 9.5
+    },
+    {
+        "foodItemName": "Mutton Vindaloo",
+        "foodItemCalories": 353,
+        "foodItemProtein": 23.5,
+        "foodItemCarbs": 11.8,
+        "foodItemFat": 23.5
+    },
+    {
+        "foodItemName": "Prawn Curry",
+        "foodItemCalories": 102,
+        "foodItemProtein": 6.77,
+        "foodItemCarbs": 3.51,
+        "foodItemFat": 6.74
+    },
+    {
+        "foodItemName": "Mutton Biryani",
+        "foodItemCalories": 725,
+        "foodItemProtein": 33.2,
+        "foodItemCarbs": 96.2,
+        "foodItemFat": 22.2
+    },
+    {
+        "foodItemName": "Hot Chocolate",
+        "foodItemCalories": 357,
+        "foodItemProtein": 10.5,
+        "foodItemCarbs": 34,
+        "foodItemFat": 24.5
+    },
+    {
+        "foodItemName": "Soya Milk",
+        "foodItemCalories": 80,
+        "foodItemProtein": 7,
+        "foodItemCarbs": 4,
+        "foodItemFat": 4
+    },
+    {
+        "foodItemName": "Masala Chai",
+        "foodItemCalories": 127,
+        "foodItemProtein": 8,
+        "foodItemCarbs": 13,
+        "foodItemFat": 5
+    },
+    {
+        "foodItemName": "Naan",
+        "foodItemCalories": 286,
+        "foodItemProtein": 10,
+        "foodItemCarbs": 46,
+        "foodItemFat": 6.7
+    },
+    {
+        "foodItemName": "Pani Puri",
+        "foodItemCalories": 270,
+        "foodItemProtein": 6,
+        "foodItemCarbs": 33,
+        "foodItemFat": 12
+    },
+    {
+        "foodItemName": "Kheer",
+        "foodItemCalories": 235,
+        "foodItemProtein": 24,
+        "foodItemCarbs": 122,
+        "foodItemFat": 73
+    },
+    {
+        "foodItemName": "Chicken Korma",
+        "foodItemCalories": 328,
+        "foodItemProtein": 34,
+        "foodItemCarbs": 23,
+        "foodItemFat": 13,
+        "note": "Approximated from Chicken Vindaloo (added cream for korma richness)"
+    },
+    {
+        "foodItemName": "Chicken Chettinad",
+        "foodItemCalories": 298,
+        "foodItemProtein": 34,
+        "foodItemCarbs": 21,
+        "foodItemFat": 10,
+        "note": "Approximated from Chicken Vindaloo (spicy coconut adjustments)"
+    },
+    {
+        "foodItemName": "Rogan Josh",
+        "foodItemCalories": 353,
+        "foodItemProtein": 24,
+        "foodItemCarbs": 13,
+        "foodItemFat": 24,
+        "note": "Approximated from Mutton Vindaloo (yogurt-based sauce)"
+    },
+    {
+        "foodItemName": "Saag Gosht",
+        "foodItemCalories": 318,
+        "foodItemProtein": 24,
+        "foodItemCarbs": 12,
+        "foodItemFat": 19,
+        "note": "Approximated from Mutton Vindaloo (spinach addition reduces fat)"
+    },
+    {
+        "foodItemName": "Mutton Korma",
+        "foodItemCalories": 424,
+        "foodItemProtein": 26,
+        "foodItemCarbs": 12,
+        "foodItemFat": 31,
+        "note": "Approximated from Mutton Vindaloo (creamy nut paste increases fat)"
+    },
+    {
+        "foodItemName": "Pomfret Fry",
+        "foodItemCalories": 133,
+        "foodItemProtein": 8,
+        "foodItemCarbs": 4,
+        "foodItemFat": 7,
+        "note": "Approximated from Prawn Curry (frying adds calories)"
+    },
+    {
+        "foodItemName": "Goan Fish Curry",
+        "foodItemCalories": 112,
+        "foodItemProtein": 7,
+        "foodItemCarbs": 4,
+        "foodItemFat": 7,
+        "note": "Approximated from Prawn Curry (coconut milk variant)"
+    },
+    {
+        "foodItemName": "Malabar Fish Curry",
+        "foodItemCalories": 102,
+        "foodItemProtein": 7,
+        "foodItemCarbs": 4,
+        "foodItemFat": 6,
+        "note": "Approximated from Prawn Curry (tamarind and spice focus)"
+    },
+    {
+        "foodItemName": "Dum Aloo",
+        "foodItemCalories": 94,
+        "foodItemProtein": 2,
+        "foodItemCarbs": 61,
+        "foodItemFat": 15,
+        "note": "Approximated from Kheer (potato steaming, yogurt gravy)"
+    },
+    {
+        "foodItemName": "Malai Kofta",
+        "foodItemCalories": 360,
+        "foodItemProtein": 30,
+        "foodItemCarbs": 23,
+        "foodItemFat": 17,
+        "note": "Approximated from Chicken Korma (kofta balls add carbs)"
+    },
+    {
+        "foodItemName": "Navratan Korma",
+        "foodItemCalories": 300,
+        "foodItemProtein": 7,
+        "foodItemCarbs": 20,
+        "foodItemFat": 18,
+        "note": "Approximated from similar vegetable curries (mixed veggies and cream)"
+    },
+    {
+        "foodItemName": "Shahi Paneer",
+        "foodItemCalories": 350,
+        "foodItemProtein": 18,
+        "foodItemCarbs": 8,
+        "foodItemFat": 25,
+        "note": "Approximated from Palak Paneer (royal cream and nuts)"
+    },
+    {
+        "foodItemName": "Kadhi",
+        "foodItemCalories": 150,
+        "foodItemProtein": 6,
+        "foodItemCarbs": 15,
+        "foodItemFat": 8,
+        "note": "Approximated from Dal (yogurt and gram flour base)"
+    },
+    {
+        "foodItemName": "Egg Curry",
+        "foodItemCalories": 220,
+        "foodItemProtein": 13,
+        "foodItemCarbs": 7,
+        "foodItemFat": 14,
+        "note": "Approximated from Fish Curry (boiled eggs in gravy)"
+    },
+    {
+        "foodItemName": "Soya Chunk Curry",
+        "foodItemCalories": 120,
+        "foodItemProtein": 11,
+        "foodItemCarbs": 5,
+        "foodItemFat": 5,
+        "note": "Approximated from Soya Milk (textured protein in curry)"
+    },
+    {
+        "foodItemName": "Mushroom Curry",
+        "foodItemCalories": 160,
+        "foodItemProtein": 7,
+        "foodItemCarbs": 12,
+        "foodItemFat": 7,
+        "note": "Approximated from Vegetable Korma (mushrooms as low-cal base)"
+    },
+    {
+        "foodItemName": "Vegetable Biryani",
+        "foodItemCalories": 508,
+        "foodItemProtein": 17,
+        "foodItemCarbs": 77,
+        "foodItemFat": 13,
+        "note": "Approximated from Mutton Biryani (veggies replace meat)"
+    },
+    {
+        "foodItemName": "Hyderabadi Biryani",
+        "foodItemCalories": 447,
+        "foodItemProtein": 40,
+        "foodItemCarbs": 27,
+        "foodItemFat": 11,
+        "note": "Approximated from Chicken Vindaloo (layered rice with spices)"
+    },
+    {
+        "foodItemName": "Egg Biryani",
+        "foodItemCalories": 725,
+        "foodItemProtein": 23,
+        "foodItemCarbs": 96,
+        "foodItemFat": 18,
+        "note": "Approximated from Mutton Biryani (eggs reduce protein)"
+    },
+    {
+        "foodItemName": "Fish Biryani",
+        "foodItemCalories": 653,
+        "foodItemProtein": 20,
+        "foodItemCarbs": 96,
+        "foodItemFat": 16,
+        "note": "Approximated from Mutton Biryani (fish substitution)"
+    },
+    {
+        "foodItemName": "Prawn Biryani",
+        "foodItemCalories": 689,
+        "foodItemProtein": 23,
+        "foodItemCarbs": 96,
+        "foodItemFat": 18,
+        "note": "Approximated from Mutton Biryani (seafood adjustment)"
+    },
+    {
+        "foodItemName": "Kolkata Biryani",
+        "foodItemCalories": 761,
+        "foodItemProtein": 37,
+        "foodItemCarbs": 101,
+        "foodItemFat": 24,
+        "note": "Approximated from Mutton Biryani (potato addition)"
+    },
+    {
+        "foodItemName": "Thalassery Biryani",
+        "foodItemCalories": 798,
+        "foodItemProtein": 33,
+        "foodItemCarbs": 106,
+        "foodItemFat": 22,
+        "note": "Approximated from Mutton Biryani (short grain rice)"
+    },
+    {
+        "foodItemName": "Fish Fry",
+        "foodItemCalories": 133,
+        "foodItemProtein": 8,
+        "foodItemCarbs": 4,
+        "foodItemFat": 7,
+        "note": "Approximated from Pomfret Fry (shallow frying)"
+    },
+    {
+        "foodItemName": "Prawn Masala",
+        "foodItemCalories": 122,
+        "foodItemProtein": 7,
+        "foodItemCarbs": 4,
+        "foodItemFat": 7,
+        "note": "Approximated from Prawn Curry (dry spice mix)"
+    },
+    {
+        "foodItemName": "Crab Curry",
+        "foodItemCalories": 133,
+        "foodItemProtein": 7,
+        "foodItemCarbs": 4,
+        "foodItemFat": 8,
+        "note": "Approximated from Prawn Curry (shellfish similarity)"
+    },
+    {
+        "foodItemName": "Sardine Curry",
+        "foodItemCalories": 122,
+        "foodItemProtein": 7,
+        "foodItemCarbs": 4,
+        "foodItemFat": 7,
+        "note": "Approximated from Prawn Curry (oily fish)"
+    },
+    {
+        "foodItemName": "Pomfret Curry",
+        "foodItemCalories": 112,
+        "foodItemProtein": 7,
+        "foodItemCarbs": 4,
+        "foodItemFat": 7,
+        "note": "Approximated from Prawn Curry (mild gravy)"
+    },
+    {
+        "foodItemName": "Shrimp Biryani",
+        "foodItemCalories": 689,
+        "foodItemProtein": 23,
+        "foodItemCarbs": 96,
+        "foodItemFat": 18,
+        "note": "Approximated from Prawn Biryani (similar to prawns)"
+    },
+    {
+        "foodItemName": "Machher Jhol",
+        "foodItemCalories": 180,
+        "foodItemProtein": 12,
+        "foodItemCarbs": 6,
+        "foodItemFat": 10,
+        "note": "Approximated from Fish Curry (light Bengali stew)"
+    },
+    {
+        "foodItemName": "Filter Coffee",
+        "foodItemCalories": 10,
+        "foodItemProtein": 0,
+        "foodItemCarbs": 2,
+        "foodItemFat": 0,
+        "note": "Approximated from Black Coffee (decoction method)"
+    },
+    {
+        "foodItemName": "Mango Lassi",
+        "foodItemCalories": 200,
+        "foodItemProtein": 6,
+        "foodItemCarbs": 30,
+        "foodItemFat": 6,
+        "note": "Approximated from Lassi (mango pulp adds carbs)"
+    },
+    {
+        "foodItemName": "Buttermilk",
+        "foodItemCalories": 100,
+        "foodItemProtein": 8,
+        "foodItemCarbs": 12,
+        "foodItemFat": 2,
+        "note": "Approximated from Lassi (diluted yogurt)"
+    },
+    {
+        "foodItemName": "Thandai",
+        "foodItemCalories": 250,
+        "foodItemProtein": 8,
+        "foodItemCarbs": 30,
+        "foodItemFat": 12,
+        "note": "Approximated from Almond Milk (nuts and spices)"
+    },
+    {
+        "foodItemName": "Aam Panna",
+        "foodItemCalories": 80,
+        "foodItemProtein": 1,
+        "foodItemCarbs": 20,
+        "foodItemFat": 0,
+        "note": "Approximated from Mango (raw mango drink)"
+    },
+    {
+        "foodItemName": "Jal Jeera",
+        "foodItemCalories": 30,
+        "foodItemProtein": 1,
+        "foodItemCarbs": 7,
+        "foodItemFat": 0,
+        "note": "Approximated from Lemon Juice (cumin and herbs)"
+    },
+    {
+        "foodItemName": "Rose Milk",
+        "foodItemCalories": 150,
+        "foodItemProtein": 8,
+        "foodItemCarbs": 18,
+        "foodItemFat": 6,
+        "note": "Approximated from Whole Milk (rose syrup addition)"
+    },
+    {
+        "foodItemName": "Ras Malai",
+        "foodItemCalories": 250,
+        "foodItemProtein": 10,
+        "foodItemCarbs": 30,
+        "foodItemFat": 10,
+        "note": "Approximated from Rasgulla (milk syrup)"
+    },
+    {
+        "foodItemName": "Barfi",
+        "foodItemCalories": 400,
+        "foodItemProtein": 8,
+        "foodItemCarbs": 50,
+        "foodItemFat": 20,
+        "note": "Approximated from Laddu (milk solids and sugar)"
+    },
+    {
+        "foodItemName": "Peda",
+        "foodItemCalories": 350,
+        "foodItemProtein": 10,
+        "foodItemCarbs": 40,
+        "foodItemFat": 15,
+        "note": "Approximated from Barfi (condensed milk)"
+    },
+    {
+        "foodItemName": "Sandesh",
+        "foodItemCalories": 200,
+        "foodItemProtein": 8,
+        "foodItemCarbs": 25,
+        "foodItemFat": 8,
+        "note": "Approximated from Rasgulla (chenna and sugar)"
+    },
+    {
+        "foodItemName": "Mysore Pak",
+        "foodItemCalories": 500,
+        "foodItemProtein": 5,
+        "foodItemCarbs": 60,
+        "foodItemFat": 30,
+        "note": "Approximated from Halwa (ghee and gram flour)"
+    },
+    {
+        "foodItemName": "Payasam",
+        "foodItemCalories": 300,
+        "foodItemProtein": 6,
+        "foodItemCarbs": 50,
+        "foodItemFat": 10,
+        "note": "Approximated from Kheer (vermicelli or rice)"
+    },
+    {
+        "foodItemName": "Shrikhand",
+        "foodItemCalories": 280,
+        "foodItemProtein": 10,
+        "foodItemCarbs": 35,
+        "foodItemFat": 12,
+        "note": "Approximated from Yogurt (strained with sugar)"
+    },
+    {
+        "foodItemName": "Modak",
+        "foodItemCalories": 200,
+        "foodItemProtein": 4,
+        "foodItemCarbs": 30,
+        "foodItemFat": 8,
+        "note": "Approximated from Laddu (coconut filling)"
+    },
+    {
+        "foodItemName": "Puran Poli",
+        "foodItemCalories": 300,
+        "foodItemProtein": 6,
+        "foodItemCarbs": 50,
+        "foodItemFat": 10,
+        "note": "Approximated from Chapati (lentil stuffing)"
+    },
+    {
+        "foodItemName": "Butter Naan",
+        "foodItemCalories": 320,
+        "foodItemProtein": 10,
+        "foodItemCarbs": 46,
+        "foodItemFat": 12,
+        "note": "Approximated from Naan (butter topping)"
+    },
+    {
+        "foodItemName": "Garlic Naan",
+        "foodItemCalories": 300,
+        "foodItemProtein": 10,
+        "foodItemCarbs": 48,
+        "foodItemFat": 8,
+        "note": "Approximated from Naan (garlic infusion)"
+    },
+    {
+        "foodItemName": "Paratha",
+        "foodItemCalories": 250,
+        "foodItemProtein": 6,
+        "foodItemCarbs": 40,
+        "foodItemFat": 10,
+        "note": "Approximated from Chapati (layered frying)"
+    },
+    {
+        "foodItemName": "Aloo Paratha",
+        "foodItemCalories": 350,
+        "foodItemProtein": 8,
+        "foodItemCarbs": 50,
+        "foodItemFat": 15,
+        "note": "Approximated from Paratha (potato filling)"
+    },
+    {
+        "foodItemName": "Paneer Paratha",
+        "foodItemCalories": 400,
+        "foodItemProtein": 15,
+        "foodItemCarbs": 45,
+        "foodItemFat": 20,
+        "note": "Approximated from Paratha (cheese stuffing)"
+    },
+    {
+        "foodItemName": "Kulcha",
+        "foodItemCalories": 280,
+        "foodItemProtein": 9,
+        "foodItemCarbs": 45,
+        "foodItemFat": 7,
+        "note": "Approximated from Naan (leavened bread)"
+    },
+    {
+        "foodItemName": "Bhatura",
+        "foodItemCalories": 400,
+        "foodItemProtein": 8,
+        "foodItemCarbs": 50,
+        "foodItemFat": 20,
+        "note": "Approximated from Poori (fermented dough)"
+    },
+    {
+        "foodItemName": "Poori",
+        "foodItemCalories": 200,
+        "foodItemProtein": 4,
+        "foodItemCarbs": 25,
+        "foodItemFat": 10,
+        "note": "Approximated from Chapati (deep fried)"
+    },
+    {
+        "foodItemName": "Rumali Roti",
+        "foodItemCalories": 150,
+        "foodItemProtein": 5,
+        "foodItemCarbs": 30,
+        "foodItemFat": 2,
+        "note": "Approximated from Chapati (thin and folded)"
+    },
+    {
+        "foodItemName": "Missi Roti",
+        "foodItemCalories": 180,
+        "foodItemProtein": 7,
+        "foodItemCarbs": 35,
+        "foodItemFat": 3,
+        "note": "Approximated from Chapati (gram flour mix)"
+    },
+    {
+        "foodItemName": "Bhel Puri",
+        "foodItemCalories": 250,
+        "foodItemProtein": 5,
+        "foodItemCarbs": 40,
+        "foodItemFat": 10,
+        "note": "Approximated from Sev Puri (puffed rice and chutneys)"
+    },
+    {
+        "foodItemName": "Sev Puri",
+        "foodItemCalories": 280,
+        "foodItemProtein": 6,
+        "foodItemCarbs": 35,
+        "foodItemFat": 12,
+        "note": "Approximated from Pani Puri (crisps and toppings)"
+    },
+    {
+        "foodItemName": "Dahi Puri",
+        "foodItemCalories": 300,
+        "foodItemProtein": 7,
+        "foodItemCarbs": 38,
+        "foodItemFat": 13,
+        "note": "Approximated from Pani Puri (yogurt addition)"
+    },
+    {
+        "foodItemName": "Pakora",
+        "foodItemCalories": 200,
+        "foodItemProtein": 4,
+        "foodItemCarbs": 20,
+        "foodItemFat": 12,
+        "note": "Approximated from Samosa (batter fried veggies)"
+    },
+    {
+        "foodItemName": "Onion Bhajiya",
+        "foodItemCalories": 220,
+        "foodItemProtein": 3,
+        "foodItemCarbs": 25,
+        "foodItemFat": 14,
+        "note": "Approximated from Pakora (onion focus)"
+    },
+    {
+        "foodItemName": "Aloo Tikki",
+        "foodItemCalories": 250,
+        "foodItemProtein": 5,
+        "foodItemCarbs": 35,
+        "foodItemFat": 12,
+        "note": "Approximated from Pakora (potato patties)"
+    },
+    {
+        "foodItemName": "Chaat",
+        "foodItemCalories": 280,
+        "foodItemProtein": 6,
+        "foodItemCarbs": 40,
+        "foodItemFat": 10,
+        "note": "Approximated from Pani Puri (mixed street snack)"
+    },
+    {
+        "foodItemName": "Kachori",
+        "foodItemCalories": 300,
+        "foodItemProtein": 6,
+        "foodItemCarbs": 35,
+        "foodItemFat": 15,
+        "note": "Approximated from Samosa (stuffed pastry)"
+    },
+    {
+        "foodItemName": "Khaman",
+        "foodItemCalories": 150,
+        "foodItemProtein": 6,
+        "foodItemCarbs": 20,
+        "foodItemFat": 5,
+        "note": "Approximated from Dhokla (steamed cake)"
+    },
+    {
+        "foodItemName": "Fafda",
+        "foodItemCalories": 200,
+        "foodItemProtein": 5,
+        "foodItemCarbs": 25,
+        "foodItemFat": 10,
+        "note": "Approximated from Dhokla (fried strips)"
+    },
+    {
+        "foodItemName": "Thepla",
+        "foodItemCalories": 160,
+        "foodItemProtein": 5,
+        "foodItemCarbs": 25,
+        "foodItemFat": 6,
+        "note": "Approximated from Chapati (fenugreek flatbread)"
+    },
+    {
+        "foodItemName": "Uttapam",
+        "foodItemCalories": 250,
+        "foodItemProtein": 6,
+        "foodItemCarbs": 40,
+        "foodItemFat": 8,
+        "note": "Approximated from Masala Dosa (thick pancake)"
+    },
+    {
+        "foodItemName": "Sambhar",
+        "foodItemCalories": 130,
+        "foodItemProtein": 5,
+        "foodItemCarbs": 20,
+        "foodItemFat": 4,
+        "note": "Approximated from Dal (veggie lentil soup)"
+    },
+    {
+        "foodItemName": "Pongal",
+        "foodItemCalories": 200,
+        "foodItemProtein": 6,
+        "foodItemCarbs": 35,
+        "foodItemFat": 5,
+        "note": "Approximated from Khichdi (rice and lentils)"
+    },
+    {
+        "foodItemName": "Akki Roti",
+        "foodItemCalories": 180,
+        "foodItemProtein": 4,
+        "foodItemCarbs": 35,
+        "foodItemFat": 3,
+        "note": "Approximated from Chapati (rice flour)"
+    },
+    {
+        "foodItemName": "Neer Dosa",
+        "foodItemCalories": 120,
+        "foodItemProtein": 3,
+        "foodItemCarbs": 25,
+        "foodItemFat": 1,
+        "note": "Approximated from Masala Dosa (thin crepe)"
+    },
+    {
+        "foodItemName": "Appam",
+        "foodItemCalories": 150,
+        "foodItemProtein": 3,
+        "foodItemCarbs": 30,
+        "foodItemFat": 2,
+        "note": "Approximated from Idli (fermented rice)"
+    },
+    {
+        "foodItemName": "Sabudana Khichdi",
+        "foodItemCalories": 250,
+        "foodItemProtein": 3,
+        "foodItemCarbs": 50,
+        "foodItemFat": 8,
+        "note": "Approximated from Khichdi (tapioca pearls)"
+    },
+    {
+        "foodItemName": "Vermicelli Upma",
+        "foodItemCalories": 200,
+        "foodItemProtein": 5,
+        "foodItemCarbs": 35,
+        "foodItemFat": 6,
+        "note": "Approximated from Upma (semolina substitute)"
+    },
+    {
+        "foodItemName": "Vegetable Korma",
+        "foodItemCalories": 280,
+        "foodItemProtein": 6,
+        "foodItemCarbs": 25,
+        "foodItemFat": 15,
+        "note": "Approximated from Navratan Korma (mixed veggies)"
+    },
+    {
+        "foodItemName": "Aloo Matar",
+        "foodItemCalories": 150,
+        "foodItemProtein": 5,
+        "foodItemCarbs": 25,
+        "foodItemFat": 5,
+        "note": "Approximated from Aloo Gobi (peas and potatoes)"
+    },
+    {
+        "foodItemName": "Jeera Rice",
+        "foodItemCalories": 200,
+        "foodItemProtein": 4,
+        "foodItemCarbs": 40,
+        "foodItemFat": 3,
+        "note": "Approximated from Basmati Rice (cumin tempering)"
+    },
+    {
+        "foodItemName": "Vegetable Pulao",
+        "foodItemCalories": 250,
+        "foodItemProtein": 5,
+        "foodItemCarbs": 45,
+        "foodItemFat": 6,
+        "note": "Approximated from Pulao (added vegetables)"
+    },
+    {
+        "foodItemName": "Soya Chaap Masala",
+        "foodItemCalories": 180,
+        "foodItemProtein": 12,
+        "foodItemCarbs": 10,
+        "foodItemFat": 8,
+        "note": "Approximated from Soya Chunk Curry (stick form)"
+    },
+    {
+        "foodItemName": "Jackfruit Curry",
+        "foodItemCalories": 200,
+        "foodItemProtein": 4,
+        "foodItemCarbs": 35,
+        "foodItemFat": 6,
+        "note": "Approximated from Vegetable Korma (meat-like texture)"
+    },
+    {
+        "foodItemName": "Lauki Kofta",
+        "foodItemCalories": 220,
+        "foodItemProtein": 6,
+        "foodItemCarbs": 25,
+        "foodItemFat": 12,
+        "note": "Approximated from Malai Kofta (gourd balls)"
+    },
+    {
+        "foodItemName": "Arbi Masala",
+        "foodItemCalories": 180,
+        "foodItemProtein": 3,
+        "foodItemCarbs": 30,
+        "foodItemFat": 7,
+        "note": "Approximated from Bhindi Masala (taro root)"
+    },
+    {
+        "foodItemName": "Hyderabadi Haleem",
+        "foodItemCalories": 350,
+        "foodItemProtein": 15,
+        "foodItemCarbs": 40,
+        "foodItemFat": 15,
+        "note": "Approximated from Khichdi (wheat and meat porridge)"
+    },
+    {
+        "foodItemName": "Amritsari Kulcha",
+        "foodItemCalories": 300,
+        "foodItemProtein": 8,
+        "foodItemCarbs": 45,
+        "foodItemFat": 10,
+        "note": "Approximated from Kulcha (stuffed variant)"
+    },
+    {
+        "foodItemName": "Bengali Rasgulla",
+        "foodItemCalories": 180,
+        "foodItemProtein": 5,
+        "foodItemCarbs": 30,
+        "foodItemFat": 4,
+        "note": "Approximated from Rasgulla (regional style)"
+    },
+    {
+        "foodItemName": "Kashmiri Wazwan",
+        "foodItemCalories": 400,
+        "foodItemProtein": 25,
+        "foodItemCarbs": 20,
+        "foodItemFat": 25,
+        "note": "Approximated from Rogan Josh (multi-dish meal)"
+    },
+    {
+        "foodItemName": "Dal Baati Churma",
+        "foodItemCalories": 500,
+        "foodItemProtein": 15,
+        "foodItemCarbs": 70,
+        "foodItemFat": 20,
+        "note": "Approximated from Dal (wheat balls and sweet)"
+    },
+    {
+        "foodItemName": "Gujarati Undhiyu",
+        "foodItemCalories": 300,
+        "foodItemProtein": 8,
+        "foodItemCarbs": 40,
+        "foodItemFat": 15,
+        "note": "Approximated from Vegetable Korma (mixed veggies)"
+    },
+    {
+        "foodItemName": "Bihari Litti Chokha",
+        "foodItemCalories": 350,
+        "foodItemProtein": 10,
+        "foodItemCarbs": 50,
+        "foodItemFat": 12,
+        "note": "Approximated from Chapati (stuffed balls)"
+    },
+    {
+        "foodItemName": "Odia Pakhala Bhata",
+        "foodItemCalories": 200,
+        "foodItemProtein": 4,
+        "foodItemCarbs": 40,
+        "foodItemFat": 2,
+        "note": "Approximated from Basmati Rice (fermented rice)"
+    },
+    {
+        "foodItemName": "Assamese Pitha",
+        "foodItemCalories": 250,
+        "foodItemProtein": 5,
+        "foodItemCarbs": 45,
+        "foodItemFat": 5,
+        "note": "Approximated from Modak (rice flour sweets)"
+    },
+    {
+        "foodItemName": "Oat Milk",
+        "foodItemCalories": 120,
+        "foodItemProtein": 3,
+        "foodItemCarbs": 16,
+        "foodItemFat": 5,
+        "note": "Approximated from Almond Milk (oat base)"
+    },
+    {
+        "foodItemName": "Turmeric Milk",
+        "foodItemCalories": 150,
+        "foodItemProtein": 8,
+        "foodItemCarbs": 12,
+        "foodItemFat": 8,
+        "note": "Approximated from Whole Milk (turmeric addition)"
+    },
+    {
+        "foodItemName": "Saffron Milk",
+        "foodItemCalories": 160,
+        "foodItemProtein": 8,
+        "foodItemCarbs": 13,
+        "foodItemFat": 8,
+        "note": "Approximated from Whole Milk (saffron infusion)"
+    },
+    {
+        "foodItemName": "Protein Shake",
+        "foodItemCalories": 160,
+        "foodItemProtein": 25,
+        "foodItemCarbs": 10,
+        "foodItemFat": 3,
+        "note": "Approximated from Yogurt (whey or plant protein)"
+    },
+    {
+        "foodItemName": "Granola Bars",
+        "foodItemCalories": 200,
+        "foodItemProtein": 5,
+        "foodItemCarbs": 30,
+        "foodItemFat": 8,
+        "note": "Approximated from Cereal (oats and nuts)"
+    }
+]
