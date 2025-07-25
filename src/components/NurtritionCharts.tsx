@@ -14,14 +14,38 @@ interface NutritionChartsProps {
 
 const COLORS = ['#b6b6e5', '#b6e5d8', '#f4b6b6'];
 
+// Custom tooltip for bar chart - styled for both light and dark modes
+const CustomBarTooltip = ({ active, payload, label }: TooltipProps<any, string>) => {
+  if (active && payload && payload.length) {
+    return (
+      <div className="bg-white/95 dark:bg-[#23272f]/95 p-3 border border-[#e5e7eb] dark:border-[#393a3d] rounded-lg shadow-lg text-gray-900 dark:text-gray-100 text-sm backdrop-blur-sm">
+        <p className="font-semibold mb-2 text-gray-800 dark:text-gray-200">{`Food: ${label}`}</p>
+        {payload.map((entry, index) => (
+          <p key={`item-${index}`} className="mb-1 flex items-center">
+            <span 
+              className="inline-block w-3 h-3 rounded-full mr-2" 
+              style={{ backgroundColor: entry.color }}
+            ></span>
+            <span className="font-medium text-gray-700 dark:text-gray-300">{entry.name}:</span>
+            <span className="ml-1 font-semibold">
+              {Math.round(entry.value || 0)} {entry.name === 'Calories' ? 'cal' : 'g'}
+            </span>
+          </p>
+        ))}
+      </div>
+    );
+  }
+  return null;
+};
+
 // Custom tooltip for pie chart with appropriate units
 const CustomPieTooltip = ({ active, payload }: TooltipProps<number, string>) => {
   if (active && payload && payload.length) {
     const { name, value, payload: { unit } } = payload[0];
     return (
-      <div className="bg-white/90 dark:bg-[#23272f]/90 p-3 border border-[#e5e7eb] dark:border-[#393a3d] rounded-lg shadow-md">
-        <p className="font-semibold">{name}</p>
-        <p>Value: {Math.round(value?? 0)} {unit}</p>
+      <div className="bg-white/95 dark:bg-[#23272f]/95 p-3 border border-[#e5e7eb] dark:border-[#393a3d] rounded-lg shadow-lg backdrop-blur-sm">
+        <p className="font-semibold text-gray-800 dark:text-gray-200">{name}</p>
+        <p className="text-gray-700 dark:text-gray-300">Value: {Math.round(value ?? 0)} {unit}</p>
       </div>
     );
   }
@@ -29,14 +53,15 @@ const CustomPieTooltip = ({ active, payload }: TooltipProps<number, string>) => 
 };
 
 interface CustomRadialTooltipProps extends TooltipProps<number, string> {
-    calorieTarget: number;
-    proteinTarget: number;
-  }
-// Custom tooltip for radial chart (unchanged from your version)
+  calorieTarget: number;
+  proteinTarget: number;
+}
+
+// Custom tooltip for radial chart
 const CustomRadialTooltip = ({ active, payload, calorieTarget, proteinTarget }: CustomRadialTooltipProps) => {
   if (active && payload && payload.length) {
     const item = payload[0].payload;
-    const truncatedValue = Number(item.value).toFixed(1); // Truncate to 1 decimal place
+    const truncatedValue = Number(item.value).toFixed(1);
 
     let absoluteText = '';
     if (item.name === 'Calories') {
@@ -47,24 +72,35 @@ const CustomRadialTooltip = ({ active, payload, calorieTarget, proteinTarget }: 
     }
 
     return (
-      <div className="bg-white/90 dark:bg-[#23272f]/90 p-3 border border-[#e5e7eb] dark:border-[#393a3d] rounded-lg shadow-md">
-        <p className="font-semibold">{item.name}</p>
-        <p>Progress: {truncatedValue}% ({absoluteText})</p>
+      <div className="bg-white/95 dark:bg-[#23272f]/95 p-3 border border-[#e5e7eb] dark:border-[#393a3d] rounded-lg shadow-lg backdrop-blur-sm">
+        <p className="font-semibold text-gray-800 dark:text-gray-200">{item.name}</p>
+        <p className="text-gray-700 dark:text-gray-300">Progress: {truncatedValue}% ({absoluteText})</p>
       </div>
     );
   }
   return null;
 };
 
+// Custom label formatter for X-axis to handle long names
+const formatXAxisLabel = (value: string) => {
+  if (value.length > 12) {
+    return value.substring(0, 12) + '...';
+  }
+  return value;
+};
+
 export default function NutritionCharts({ chartData, totalCalories, calorieTarget, totalProtein, proteinTarget, totalFat, type }: NutritionChartsProps) {
-  // Progress data for radial charts (unchanged)
+  // Detect dark mode (you can also pass this as a prop if you have access to theme context)
+  const isDarkMode = typeof window !== 'undefined' && window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
+
+  // Progress data for radial charts
   const progressData = [
     { name: 'Calories', value: Math.min((totalCalories / calorieTarget) * 100, 100), fill: '#b6b6e5' },
     { name: 'Protein', value: Math.min((totalProtein / proteinTarget) * 100, 100), fill: '#b6e5d8' },
-    { name: 'Fat', value: (totalFat / (calorieTarget * 0.3 / 9)) * 100, fill: '#f4b6b6' }, // Rough fat target: 30% of calories / 9 cal per g
+    { name: 'Fat', value: (totalFat / (calorieTarget * 0.3 / 9)) * 100, fill: '#f4b6b6' },
   ];
 
-  // Pie data with raw values and units (no conversion)
+  // Pie data with raw values and units
   const pieData = [
     { name: 'Calories', value: totalCalories, unit: 'cal' },
     { name: 'Protein', value: totalProtein, unit: 'g' },
@@ -73,14 +109,57 @@ export default function NutritionCharts({ chartData, totalCalories, calorieTarge
 
   if (type === 'bar') {
     return (
-      <div className="w-full h-64 bg-white/80 dark:bg-[#23272f]/80 rounded-2xl shadow-xl border border-[#e5e7eb] dark:border-[#23272f] p-4">
+      <div className="w-full h-80 bg-white/80 dark:bg-[#23272f]/80 rounded-2xl shadow-xl border border-[#e5e7eb] dark:border-[#23272f] p-4">
         <ResponsiveContainer width="100%" height="100%">
-          <BarChart data={chartData} margin={{ top: 16, right: 16, left: 0, bottom: 0 }}>
-            <CartesianGrid strokeDasharray="3 3" stroke="#e5e7eb" />
-            <XAxis dataKey="name" stroke="#23272f" label={{ value: 'Food Items', position: 'insideBottom', offset: 10 }} />
-            <YAxis stroke="#23272f" label={{ value: 'Amount (cal/g)', angle: -90, position: 'insideLeft' }} tickFormatter={(value) => `${value} cal/g`} />
-            <Tooltip contentStyle={{ backgroundColor: 'black', border: '1px solid #e5e7eb', borderRadius: '8px' }} />
-            <Legend />
+          <BarChart 
+            data={chartData} 
+            margin={{ 
+              top: 20, 
+              right: 30, 
+              left: 20, 
+              bottom: 80 
+            }}
+          >
+            <CartesianGrid strokeDasharray="3 3" stroke="#e5e7eb" className="dark:stroke-[#393a3d]" />
+            <XAxis 
+              dataKey="name" 
+              stroke={isDarkMode ? '#e5e7eb' : '#374151'} 
+              angle={-45} 
+              textAnchor="end" 
+              height={80}
+              fontSize={11}
+              interval={0}
+              tickFormatter={formatXAxisLabel}
+              tick={{ 
+                fontSize: 11, 
+                fill: isDarkMode ? '#e5e7eb' : '#374151' 
+              }}
+            />
+            <YAxis 
+              stroke={isDarkMode ? '#e5e7eb' : '#374151'}
+              fontSize={11}
+              tick={{ 
+                fontSize: 11, 
+                fill: isDarkMode ? '#e5e7eb' : '#374151' 
+              }}
+              label={{ 
+                value: 'Amount (cal/g)', 
+                angle: -90, 
+                position: 'insideLeft',
+                style: { 
+                  textAnchor: 'middle', 
+                  fill: isDarkMode ? '#e5e7eb' : '#374151',
+                  fontSize: '11px'
+                }
+              }} 
+            />
+            <Tooltip content={<CustomBarTooltip />} />
+            <Legend 
+              wrapperStyle={{ 
+                fontSize: '12px', 
+                color: isDarkMode ? '#e5e7eb' : '#374151' 
+              }} 
+            />
             <Bar dataKey="Calories" fill={COLORS[0]} radius={[4, 4, 0, 0]} />
             <Bar dataKey="Protein" fill={COLORS[1]} radius={[4, 4, 0, 0]} />
             <Bar dataKey="Fat" fill={COLORS[2]} radius={[4, 4, 0, 0]} />
@@ -127,7 +206,9 @@ export default function NutritionCharts({ chartData, totalCalories, calorieTarge
                 <Tooltip content={<CustomRadialTooltip calorieTarget={calorieTarget} proteinTarget={proteinTarget} />} />
               </RadialBarChart>
             </ResponsiveContainer>
-            <span className="mt-2 text-sm font-semibold">{item.name}: {Math.round(item.value)}% of target</span>
+            <span className="mt-2 text-xs sm:text-sm font-semibold text-center text-gray-800 dark:text-gray-200">
+              {item.name}: {Math.round(item.value)}% of target
+            </span>
           </div>
         ))}
       </div>

@@ -4,6 +4,7 @@ import foodData from '../../config/FoodNutrionalInfo.json';
 import { FoodItem, FoodNutritionalInfo, UserProfile, Mode } from '@/types/dashboard/dashboard';
 import NutritionCharts from "@/components/NurtritionCharts";
 import ChartTypeSelector from "@/components/ChartTypeSelector";
+
 const MODES: Mode[] = [
   { label: "Weight Loss", value: "loss", multiplier: 0.8 },
   { label: "Weight Gain", value: "gain", multiplier: 1.2 },
@@ -81,6 +82,14 @@ export default function DashboardPage() {
     return false;
   });
 
+  // Add Goals & Settings collapse state
+  const [isGoalsCollapsed, setIsGoalsCollapsed] = useState<boolean>(() => {
+    if (typeof window !== 'undefined') {
+      return localStorage.getItem("guest_goalsCollapsed") === "true";
+    }
+    return false;
+  });
+
   const [profileForm, setProfileForm] = useState<UserProfile>({
     name: "",
     height: 170,
@@ -90,17 +99,40 @@ export default function DashboardPage() {
     activity: 'moderate' // Default to moderate
   });
 
-  // Existing state
+  // Mode state
   const [mode, setMode] = useState<string>(() => {
     if (typeof window !== 'undefined') {
       return localStorage.getItem("guest_mode") || "loss";
     }
     return "loss";
   });
+
   const [chartType, setChartType] = useState<'bar' | 'pie' | 'progress'>('bar');
 
-  const [calorieTarget, setCalorieTarget] = useState<number>(1800);
-  const [proteinTarget, setProteinTarget] = useState<number>(120);
+  // Updated target state with localStorage persistence
+  const [calorieTarget, setCalorieTarget] = useState<number>(() => {
+    if (typeof window !== 'undefined') {
+      const saved = localStorage.getItem("guest_calorieTarget");
+      return saved ? Number(saved) : 1800;
+    }
+    return 1800;
+  });
+
+  const [proteinTarget, setProteinTarget] = useState<number>(() => {
+    if (typeof window !== 'undefined') {
+      const saved = localStorage.getItem("guest_proteinTarget");
+      return saved ? Number(saved) : 120;
+    }
+    return 120;
+  });
+
+  // Add a flag to track if targets were manually set
+  const [targetsManuallySet, setTargetsManuallySet] = useState<boolean>(() => {
+    if (typeof window !== 'undefined') {
+      return localStorage.getItem("guest_targetsManuallySet") === "true";
+    }
+    return false;
+  });
 
   // Updated food form state
   const [foodName, setFoodName] = useState<string>("");
@@ -127,6 +159,36 @@ export default function DashboardPage() {
   });
 
   const [today, setToday] = useState<string>(getToday());
+
+  // Target input handlers
+  const handleCalorieTargetChange = (value: number) => {
+    setCalorieTarget(value);
+    setTargetsManuallySet(true);
+  };
+
+  const handleProteinTargetChange = (value: number) => {
+    setProteinTarget(value);
+    setTargetsManuallySet(true);
+  };
+
+  // Goals & Settings handlers
+  const handleGoalsSave = () => {
+    setTargetsManuallySet(true); // Mark as manually set
+    setIsGoalsCollapsed(true);
+    if (typeof window !== 'undefined') {
+      localStorage.setItem("guest_goalsCollapsed", "true");
+      localStorage.setItem("guest_calorieTarget", calorieTarget.toString());
+      localStorage.setItem("guest_proteinTarget", proteinTarget.toString());
+      localStorage.setItem("guest_targetsManuallySet", "true");
+    }
+  };
+
+  const handleGoalsEdit = () => {
+    setIsGoalsCollapsed(false);
+    if (typeof window !== 'undefined') {
+      localStorage.setItem("guest_goalsCollapsed", "false");
+    }
+  };
 
   // Handle food search
   const handleFoodSearch = (searchTerm: string) => {
@@ -172,15 +234,15 @@ export default function DashboardPage() {
     }
   };
 
-  // Update targets when profile or mode changes
+  // Update targets when profile or mode changes (only if not manually set)
   useEffect(() => {
-    if (userProfile) {
+    if (userProfile && !targetsManuallySet) {
       const newCalorieTarget = calculateDailyCalories(userProfile, mode);
       const newProteinTarget = calculateProteinNeeds(userProfile, mode);
       setCalorieTarget(newCalorieTarget);
       setProteinTarget(newProteinTarget);
     }
-  }, [userProfile, mode]);
+  }, [userProfile, mode, targetsManuallySet]);
 
   // Reset food log if day changes
   useEffect(() => {
@@ -204,13 +266,23 @@ export default function DashboardPage() {
     }
   }, [userProfile]);
 
-  // Persist other data
+  // Persist other data including goals collapsed state
   useEffect(() => {
     if (typeof window !== 'undefined') {
       localStorage.setItem("guest_mode", mode);
       localStorage.setItem("guest_profileCollapsed", isProfileCollapsed.toString());
+      localStorage.setItem("guest_goalsCollapsed", isGoalsCollapsed.toString());
     }
-  }, [mode, isProfileCollapsed]);
+  }, [mode, isProfileCollapsed, isGoalsCollapsed]);
+
+  // Add persistence for targets
+  useEffect(() => {
+    if (typeof window !== 'undefined') {
+      localStorage.setItem("guest_calorieTarget", calorieTarget.toString());
+      localStorage.setItem("guest_proteinTarget", proteinTarget.toString());
+      localStorage.setItem("guest_targetsManuallySet", targetsManuallySet.toString());
+    }
+  }, [calorieTarget, proteinTarget, targetsManuallySet]);
 
   // Persist food log
   useEffect(() => {
@@ -265,6 +337,17 @@ export default function DashboardPage() {
   // Remove food item
   const handleRemoveFood = (index: number) => {
     setFoodLog(foodLog.filter((_, i) => i !== index));
+  };
+
+  // Reset targets to calculated values
+  const handleResetTargets = () => {
+    if (userProfile) {
+      const newCalorieTarget = calculateDailyCalories(userProfile, mode);
+      const newProteinTarget = calculateProteinNeeds(userProfile, mode);
+      setCalorieTarget(newCalorieTarget);
+      setProteinTarget(newProteinTarget);
+      setTargetsManuallySet(false);
+    }
   };
 
   // Calculate totals
@@ -400,46 +483,88 @@ export default function DashboardPage() {
         </div>
       </div>
 
-      {/* Settings Card */}
-      <div className="w-full max-w-4xl bg-white/80 dark:bg-[#23272f]/80 rounded-2xl shadow-xl border border-[#e5e7eb] dark:border-[#23272f] p-6 mb-6">
-        <h2 className="text-xl font-semibold mb-4">Goals & Settings</h2>
-        <div className="flex flex-col lg:flex-row gap-6">
-          <div className="flex-1">
-            <label className="block mb-1 font-semibold">Mode</label>
-            <select
-              value={mode}
-              onChange={handleModeChange}
-              className="w-full rounded-lg border border-[#e5e7eb] dark:border-[#393a3d] bg-white/90 dark:bg-[#23272f]/90 px-4 py-2 text-base focus:outline-none focus:ring-2 focus:ring-[#b6e5d8] transition-all"
+      {/* Goals & Settings Card - Collapsible */}
+      {!isGoalsCollapsed ? (
+        <div className="w-full max-w-4xl bg-white/80 dark:bg-[#23272f]/80 rounded-2xl shadow-xl border border-[#e5e7eb] dark:border-[#23272f] p-6 mb-6">
+          <h2 className="text-xl font-semibold mb-4">Goals & Settings</h2>
+          <div className="flex flex-col lg:flex-row gap-6">
+            <div className="flex-1">
+              <label className="block mb-1 font-semibold">Mode</label>
+              <select
+                value={mode}
+                onChange={handleModeChange}
+                className="w-full rounded-lg border border-[#e5e7eb] dark:border-[#393a3d] bg-white/90 dark:bg-[#23272f]/90 px-4 py-2 text-base focus:outline-none focus:ring-2 focus:ring-[#b6e5d8] transition-all"
+              >
+                {MODES.map(m => (
+                  <option key={m.value} value={m.value}>{m.label}</option>
+                ))}
+              </select>
+            </div>
+            <div className="flex-1">
+              <label className="block mb-1 font-semibold">Calorie Target {!targetsManuallySet && '(Calculated)'}</label>
+              <input
+                type="number"
+                min="500"
+                max="6000"
+                value={calorieTarget}
+                onChange={e => handleCalorieTargetChange(Number(e.target.value))}
+                className="w-full rounded-lg border border-[#e5e7eb] dark:border-[#393a3d] bg-white/90 dark:bg-[#23272f]/90 px-4 py-2 text-base focus:outline-none focus:ring-2 focus:ring-[#b6e5d8] transition-all"
+              />
+            </div>
+            <div className="flex-1">
+              <label className="block mb-1 font-semibold">Protein Target (g) {!targetsManuallySet && '(Calculated)'}</label>
+              <input
+                type="number"
+                min="10"
+                max="400"
+                value={proteinTarget}
+                onChange={e => handleProteinTargetChange(Number(e.target.value))}
+                className="w-full rounded-lg border border-[#e5e7eb] dark:border-[#393a3d] bg-white/90 dark:bg-[#23272f]/90 px-4 py-2 text-base focus:outline-none focus:ring-2 focus:ring-[#b6e5d8] transition-all"
+              />
+            </div>
+          </div>
+          {userProfile && (
+            <div className="flex justify-end mt-4 space-x-2">
+              {/* Show Reset button only if targets can actually be reset */}
+              {(targetsManuallySet || calorieTarget !== calculateDailyCalories(userProfile, mode) || proteinTarget !== calculateProteinNeeds(userProfile, mode)) && (
+                <button
+                  onClick={handleResetTargets}
+                  className="px-4 py-2 rounded-lg bg-gray-100 hover:bg-gray-200 dark:bg-gray-700 dark:hover:bg-gray-600 text-gray-700 dark:text-gray-300 text-sm font-medium transition-colors"
+                >
+                  Reset to Calculated Values
+                </button>
+              )}
+              <button
+                onClick={handleGoalsSave}
+                className="px-4 py-2 rounded-lg bg-[#b6e5d8] hover:bg-[#a0d7c7] text-[#23272f] font-medium text-sm transition-colors"
+              >
+                Save Goals
+              </button>
+            </div>
+          )}
+
+        </div>
+      ) : (
+        <div className="w-full max-w-4xl bg-white/80 dark:bg-[#23272f]/80 rounded-2xl shadow-xl border border-[#e5e7eb] dark:border-[#23272f] p-4 mb-6">
+          <div className="flex items-center justify-between">
+            <div>
+              <h2 className="text-xl font-semibold">Goals & Settings</h2>
+              <div className="text-sm text-gray-600 dark:text-gray-400 mt-1">
+                {mode === 'loss' ? 'Weight Loss' : mode === 'gain' ? 'Weight Gain' : 'Maintenance'} •
+                {calorieTarget} cal • {proteinTarget}g protein
+              </div>
+            </div>
+            <button
+              onClick={handleGoalsEdit}
+              className="p-2 rounded-lg bg-[#b6e5d8] hover:bg-[#a0d7c7] text-[#23272f] transition-colors"
             >
-              {MODES.map(m => (
-                <option key={m.value} value={m.value}>{m.label}</option>
-              ))}
-            </select>
-          </div>
-          <div className="flex-1">
-            <label className="block mb-1 font-semibold">Calorie Target (Calculated)</label>
-            <input
-              type="number"
-              min="500"
-              max="6000"
-              value={calorieTarget}
-              onChange={e => setCalorieTarget(Number(e.target.value))}
-              className="w-full rounded-lg border border-[#e5e7eb] dark:border-[#393a3d] bg-white/90 dark:bg-[#23272f]/90 px-4 py-2 text-base focus:outline-none focus:ring-2 focus:ring-[#b6e5d8] transition-all"
-            />
-          </div>
-          <div className="flex-1">
-            <label className="block mb-1 font-semibold">Protein Target (g) (Calculated)</label>
-            <input
-              type="number"
-              min="10"
-              max="400"
-              value={proteinTarget}
-              onChange={e => setProteinTarget(Number(e.target.value))}
-              className="w-full rounded-lg border border-[#e5e7eb] dark:border-[#393a3d] bg-white/90 dark:bg-[#23272f]/90 px-4 py-2 text-base focus:outline-none focus:ring-2 focus:ring-[#b6e5d8] transition-all"
-            />
+              <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z" />
+              </svg>
+            </button>
           </div>
         </div>
-      </div>
+      )}
 
       {/* Add Food Card */}
       <div className="w-full max-w-4xl bg-white/80 dark:bg-[#23272f]/80 rounded-2xl shadow-xl border border-[#e5e7eb] dark:border-[#23272f] p-6 mb-6">
@@ -553,23 +678,88 @@ export default function DashboardPage() {
         </div>
       </div>
 
-      {/* Summary Card */}
-      {/* Summary Card with Progress Charts */}
+      {/* Summary Card with Progress Charts and Detailed Stats */}
       <div className="w-full max-w-4xl bg-white/80 dark:bg-[#23272f]/80 rounded-2xl shadow-xl border border-[#e5e7eb] dark:border-[#23272f] p-6 mb-6">
         <h2 className="text-xl font-semibold mb-4">Today&apos;s Summary</h2>
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mb-6">
-          {/* Existing summary boxes (unchanged) */}
-        </div>
+
         {foodLog.length > 0 && (
-          <NutritionCharts
-            chartData={chartData}
-            totalCalories={totalCalories}
-            calorieTarget={calorieTarget}
-            totalProtein={totalProtein}
-            proteinTarget={proteinTarget}
-            totalFat={totalFat}
-            type="progress"
-          />
+          <>
+            <NutritionCharts
+              chartData={chartData}
+              totalCalories={totalCalories}
+              calorieTarget={calorieTarget}
+              totalProtein={totalProtein}
+              proteinTarget={proteinTarget}
+              totalFat={totalFat}
+              type="progress"
+            />
+
+            {/* Detailed Nutrition Stats */}
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mt-6 pt-6 border-t border-[#e5e7eb] dark:border-[#393a3d]">
+              {/* Calories Stats */}
+              <div className="text-center">
+                <h3 className="font-semibold text-lg mb-2 text-blue-600 dark:text-blue-400">Calories</h3>
+                <div className="space-y-1">
+                  <div className="text-sm text-gray-600 dark:text-gray-400">
+                    <span className="font-medium">Current:</span> {totalCalories} cal
+                  </div>
+                  <div className="text-sm text-gray-600 dark:text-gray-400">
+                    <span className="font-medium">Target:</span> {calorieTarget} cal
+                  </div>
+                  <div className={`text-sm font-medium ${totalCalories > calorieTarget
+                    ? 'text-red-600 dark:text-red-400'
+                    : 'text-green-600 dark:text-green-400'}`}>
+                    {totalCalories > calorieTarget
+                      ? `Exceeded by: ${totalCalories - calorieTarget} cal`
+                      : `Remaining: ${calorieTarget - totalCalories} cal`}
+                  </div>
+                </div>
+              </div>
+
+              {/* Protein Stats */}
+              <div className="text-center">
+                <h3 className="font-semibold text-lg mb-2 text-green-600 dark:text-green-400">Protein</h3>
+                <div className="space-y-1">
+                  <div className="text-sm text-gray-600 dark:text-gray-400">
+                    <span className="font-medium">Current:</span> {Math.round(totalProtein * 10) / 10}g
+                  </div>
+                  <div className="text-sm text-gray-600 dark:text-gray-400">
+                    <span className="font-medium">Target:</span> {proteinTarget}g
+                  </div>
+                  <div className={`text-sm font-medium ${totalProtein > proteinTarget
+                    ? 'text-green-600 dark:text-green-400'
+                    : 'text-orange-600 dark:text-orange-400'}`}>
+                    {totalProtein > proteinTarget
+                      ? `Exceeded by: ${Math.round((totalProtein - proteinTarget) * 10) / 10}g`
+                      : `Remaining: ${Math.round((proteinTarget - totalProtein) * 10) / 10}g`}
+                  </div>
+                </div>
+              </div>
+
+              {/* Fat Stats */}
+              <div className="text-center">
+                <h3 className="font-semibold text-lg mb-2 text-orange-600 dark:text-orange-400">Fat Intake</h3>
+                <div className="space-y-1">
+                  <div className="text-sm text-gray-600 dark:text-gray-400">
+                    <span className="font-medium">Current:</span> {Math.round(totalFat * 10) / 10}g
+                  </div>
+                  <div className="text-sm text-gray-600 dark:text-gray-400">
+                    <span className="font-medium">Calories from fat:</span> {Math.round(totalFat * 9)} cal
+                  </div>
+                  <div className="text-xs text-gray-500 dark:text-gray-500">
+                    ({totalCalories > 0 ? Math.round((totalFat * 9 / totalCalories) * 100) : 0}% of total calories)
+                  </div>
+                </div>
+              </div>
+            </div>
+          </>
+        )}
+
+        {foodLog.length === 0 && (
+          <div className="text-center py-8 text-gray-500 dark:text-gray-400">
+            <p>No food items logged yet.</p>
+            <p className="text-sm mt-1">Add some food items to see your nutrition summary!</p>
+          </div>
         )}
       </div>
 
@@ -623,7 +813,6 @@ export default function DashboardPage() {
         )}
       </div>
 
-
       {/* Charts Card */}
       {foodLog.length > 0 && (
         <div className="w-full max-w-4xl bg-white/80 dark:bg-[#23272f]/80 rounded-2xl shadow-xl border border-[#e5e7eb] dark:border-[#23272f] p-6">
@@ -631,18 +820,35 @@ export default function DashboardPage() {
             <h2 className="text-xl font-semibold">Nutrition Breakdown</h2>
             <ChartTypeSelector selected={chartType} onChange={setChartType} />
           </div>
-          <NutritionCharts
-            chartData={chartData}
-            totalCalories={totalCalories}
-            calorieTarget={calorieTarget}
-            totalProtein={totalProtein}
-            proteinTarget={proteinTarget}
-            totalFat={totalFat}
-            type={chartType}
-          />
+
+          {/* Mobile-friendly chart container */}
+          {chartType === 'bar' ? (
+            <div className="w-full overflow-x-auto">
+              <div className="min-w-[600px] sm:min-w-0"> {/* Minimum width only on mobile */}
+                <NutritionCharts
+                  chartData={chartData}
+                  totalCalories={totalCalories}
+                  calorieTarget={calorieTarget}
+                  totalProtein={totalProtein}
+                  proteinTarget={proteinTarget}
+                  totalFat={totalFat}
+                  type={chartType}
+                />
+              </div>
+            </div>
+          ) : (
+            <NutritionCharts
+              chartData={chartData}
+              totalCalories={totalCalories}
+              calorieTarget={calorieTarget}
+              totalProtein={totalProtein}
+              proteinTarget={proteinTarget}
+              totalFat={totalFat}
+              type={chartType}
+            />
+          )}
         </div>
       )}
-
     </div>
   );
 }

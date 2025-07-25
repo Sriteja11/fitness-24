@@ -21,6 +21,7 @@ const weightData = [
   { week: "W4", weight: 77.8 },
   { week: "W5", weight: 77.0 },
 ];
+
 const proteinData = [
   { day: "Mon", protein: 120 },
   { day: "Tue", protein: 130 },
@@ -31,18 +32,41 @@ const proteinData = [
   { day: "Sun", protein: 138 },
 ];
 
+const features = [
+  {
+    icon: "🔍",
+    title: "Comprehensive Food Database",
+    description: "Access the world's largest nutrition dataset with detailed information for thousands of food items"
+  },
+  {
+    icon: "📝",
+    title: "Smart Food Logging",
+    description: "Simply type any food item and instantly get nutritional information to add to your daily log"
+  },
+  {
+    icon: "📊",
+    title: "Progress Visualization",
+    description: "Beautiful charts and analytics to track your nutrition journey over time"
+  },
+  {
+    icon: "🎯",
+    title: "Personalized Goals",
+    description: "Set custom calorie and macro targets tailored to your fitness objectives"
+  }
+];
+
 export default function Home() {
   const router = useRouter();
-  const [showStats, setShowStats] = useState(false);
-  const [deferredPrompt, setDeferredPrompt] = useState<BeforeInstallPromptEvent | null>(null);  // Typed state
+  const [showPreview, setShowPreview] = useState(false);
+  const [deferredPrompt, setDeferredPrompt] = useState<BeforeInstallPromptEvent | null>(null);
   const [showInstallBtn, setShowInstallBtn] = useState(false);
 
   useEffect(() => {
     const handleBeforeInstallPrompt = (e: Event) => {
       e.preventDefault();
-      const promptEvent = e as BeforeInstallPromptEvent;  // Safe cast with defined interface
+      const promptEvent = e as BeforeInstallPromptEvent;
       setDeferredPrompt(promptEvent);
-      setShowInstallBtn(true);  // Show button when prompt is available
+      setShowInstallBtn(true);
     };
 
     window.addEventListener("beforeinstallprompt", handleBeforeInstallPrompt);
@@ -54,137 +78,253 @@ export default function Home() {
 
   const handleInstallClick = async () => {
     if (!deferredPrompt) return;
-    await deferredPrompt.prompt();  // Type-safe call
-    const { outcome } = await deferredPrompt.userChoice;  // Type-safe await
+    await deferredPrompt.prompt();
+    const { outcome } = await deferredPrompt.userChoice;
     if (outcome === "accepted") {
       console.log("User installed the app");
     } else {
       console.log("User dismissed the prompt");
     }
     setDeferredPrompt(null);
-    setShowInstallBtn(false);  // Hide button after interaction
+    setShowInstallBtn(false);
   };
 
   return (
-    <div className="relative min-h-screen bg-gradient-to-b from-[#f8fafc] via-[#e8eaee] to-[#f4f4f5] dark:from-[#18181b] dark:via-[#23272f] dark:to-[#18181b] text-[#23272f] dark:text-[#ededed] flex flex-col items-center justify-center px-4 py-8 transition-colors duration-300" style={{ fontFamily: "var(--font-luxurious)" }}>
-      {/* Custom A2HS Button (appears when available) */}
-      {showInstallBtn && (
-        <button
-          onClick={handleInstallClick}
-          className="fixed bottom-4 right-4 px-6 py-3 rounded-full bg-[#2563eb] text-white font-bold text-base shadow-lg hover:shadow-xl hover:scale-105 transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-[#b6e5d8] focus:ring-offset-2 z-50"
-          style={{ fontFamily: "var(--font-montserrat)" }}
-        >
-          Add to Home Screen
-        </button>
-      )}
+    <div className="relative min-h-screen bg-gradient-to-br from-slate-50 via-stone-50 to-neutral-50 dark:from-slate-950 dark:via-stone-950 dark:to-neutral-950 text-slate-800 dark:text-slate-200">
+      
+      {/* Subtle Background Elements */}
+      <div className="absolute inset-0 overflow-hidden pointer-events-none">
+        <div className="absolute -top-32 -right-32 w-64 h-64 bg-gradient-to-br from-emerald-100/30 to-blue-100/30 dark:from-emerald-900/20 dark:to-blue-900/20 rounded-full blur-3xl"></div>
+        <div className="absolute -bottom-32 -left-32 w-80 h-80 bg-gradient-to-tr from-stone-100/40 to-slate-100/40 dark:from-stone-900/20 dark:to-slate-900/20 rounded-full blur-3xl"></div>
+      </div>
 
-      {/* Background charts */}
-      <div className="absolute inset-0 -z-10 opacity-20 pointer-events-none select-none hidden sm:block">
-        <div className="absolute top-10 left-0 w-1/2 h-64">
+      {/* Background charts with subtle styling */}
+      <div className="absolute inset-0 opacity-5 dark:opacity-10 pointer-events-none select-none hidden lg:block">
+        <div className="absolute top-20 left-10 w-1/3 h-48">
           <ResponsiveContainer width="100%" height="100%">
             <LineChart data={weightData}>
-              <XAxis dataKey="week" hide />
-              <YAxis hide />
-              <Tooltip />
-              <Line type="monotone" dataKey="weight" stroke="#b6b6e5" strokeWidth={3} dot={false} />
+              <Line type="monotone" dataKey="weight" stroke="#64748b" strokeWidth={2} dot={false} />
             </LineChart>
           </ResponsiveContainer>
         </div>
-        <div className="absolute bottom-10 right-0 w-2/3 h-48">
+        <div className="absolute bottom-20 right-10 w-2/5 h-40">
           <ResponsiveContainer width="100%" height="100%">
             <AreaChart data={proteinData}>
-              <XAxis dataKey="day" hide />
-              <YAxis hide />
-              <Tooltip />
-              <Area type="monotone" dataKey="protein" stroke="#b6e5d8" fill="#b6e5d8" fillOpacity={0.15} />
+              <Area type="monotone" dataKey="protein" stroke="#64748b" fill="#64748b" fillOpacity={0.1} />
             </AreaChart>
           </ResponsiveContainer>
         </div>
       </div>
-      {/* Hero Section */}
-      <main className="w-full max-w-lg flex flex-col items-center gap-8 text-center">
-        <Image src="/window.svg" alt="Fitness 24 Logo" width={64} height={64} className="mb-2 dark:invert" />
-        <h1 className="text-4xl sm:text-5xl font-extrabold tracking-tight mb-2" style={{ fontFamily: "var(--font-montserrat)" }}>
-          Fitness 24: Your Smart Fitness Tracker
-        </h1>
-        <p className="text-lg sm:text-2xl text-[#5a5a6e] dark:text-[#b6b6e5] mb-4 font-medium drop-shadow" style={{ fontFamily: "var(--font-luxurious)" }}>
-          Track your nutrition, weight, and progress. Set goals, log food, and visualize your journey—all in a beautiful, intuitive, mobile-first app.
-        </p>
-        <div className="flex flex-col sm:flex-row gap-4 w-full justify-center mt-2">
-          <button
-            disabled
-            className="group relative inline-block px-10 py-3 rounded-full bg-white/60 dark:bg-[#23272f]/60 shadow-md border border-[#e5e7eb] dark:border-[#23272f] text-[#b6b6e5] dark:text-[#b6b6e5] font-semibold text-lg tracking-wide cursor-not-allowed opacity-60"
-            style={{ fontFamily: "var(--font-montserrat)" }}
-          >
-            Log In
-          </button>
-          <button
-            disabled
-            className="group relative inline-block px-10 py-3 rounded-full bg-[#f4f4f5]/60 dark:bg-[#23272f]/60 shadow-md border border-[#e5e7eb] dark:border-[#23272f] text-[#b6b6e5] dark:text-[#b6e5d8] font-semibold text-lg tracking-wide cursor-not-allowed opacity-60"
-            style={{ fontFamily: "var(--font-montserrat)" }}
-          >
-            Register
-          </button>
-        </div>
-        <div className="mt-2 text-base text-[#b6b6e5] dark:text-[#b6e5d8] font-semibold" style={{ fontFamily: "var(--font-montserrat)" }}>
-          Hold tight! Our backend squad is building the muscle behind login &amp; register.
-        </div>
+
+      {/* Install Button */}
+      {showInstallBtn && (
         <button
-          className="mt-4 px-8 py-3 rounded-full bg-[#ededed] dark:bg-[#23272f] text-[#23272f] dark:text-[#ededed] font-bold text-lg shadow-md hover:shadow-lg border border-[#e5e7eb] dark:border-[#393a3d] hover:scale-105 transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-[#b6e5d8] focus:ring-offset-2 focus:ring-offset-[#f8fafc] dark:focus:ring-offset-[#18181b]"
-          style={{ fontFamily: "var(--font-montserrat)" }}
-          onClick={() => setShowStats(true)}
+          onClick={handleInstallClick}
+          className="fixed bottom-6 right-6 px-5 py-3 rounded-xl bg-slate-800 hover:bg-slate-700 dark:bg-slate-200 dark:hover:bg-slate-300 text-slate-50 dark:text-slate-800 font-medium text-sm shadow-lg hover:shadow-xl transition-all duration-200 z-50"
         >
-          Continue without login
+          Install App
         </button>
-        {showStats && (
-          <div className="w-full mt-8 flex flex-col items-center gap-4 bg-white/80 dark:bg-[#23272f]/80 rounded-xl p-6 shadow-lg border border-[#e5e7eb] dark:border-[#23272f]" style={{ fontFamily: "var(--font-luxurious)" }}>
-            <h2 className="text-xl font-semibold mb-2" style={{ fontFamily: "var(--font-montserrat)" }}>Try Fitness 24 as Guest</h2>
-            <div className="flex flex-col gap-2 text-left w-full">
-              <div className="flex justify-between"><span>Mode:</span> <span>Weight Loss</span></div>
-              <div className="flex justify-between"><span>Calorie Target:</span> <span>1800 kcal</span></div>
-              <div className="flex justify-between"><span>Protein Target:</span> <span>120g</span></div>
-              <div className="flex justify-between"><span>Today&apos;s Calories:</span> <span>0 kcal</span></div>
-              <div className="flex justify-between"><span>Today&apos;s Protein:</span> <span>0g</span></div>
+      )}
+
+      <div className="relative z-10 min-h-screen flex flex-col">
+        {/* Navigation */}
+        <nav className="w-full px-6 py-6">
+          <div className="max-w-6xl mx-auto flex justify-between items-center">
+            <div className="flex items-center gap-3">
+              <div className="w-9 h-9 bg-gradient-to-br from-emerald-600 to-blue-600 rounded-lg flex items-center justify-center shadow-sm">
+                <Image src="/app_icon.png" alt="Fitness 24 Logo" width={20} height={20} className="dark:invert" />
+              </div>
+              <span className="text-xl font-semibold text-slate-800 dark:text-slate-200">
+                Fitness 24
+              </span>
             </div>
-            <button
-              className="mt-4 px-8 py-3 rounded-full bg-[#ededed] dark:bg-[#23272f] text-[#23272f] dark:text-[#ededed] font-bold text-lg shadow-md hover:shadow-lg border border-[#e5e7eb] dark:border-[#393a3d] hover:scale-105 transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-[#b6e5d8] focus:ring-offset-2 focus:ring-offset-[#f8fafc] dark:focus:ring-offset-[#18181b]"
-              style={{ fontFamily: "var(--font-montserrat)" }}
-              onClick={() => router.push("/dashboard")}
-            >
-              Go to Dashboard
-            </button>
           </div>
-        )}
-        <div className="mt-8 w-full flex flex-col gap-6">
-          <div className="bg-white/80 dark:bg-[#23272f]/80 rounded-xl p-4 shadow-lg flex flex-col sm:flex-row items-center gap-4 border border-[#e5e7eb] dark:border-[#23272f]" style={{ fontFamily: "var(--font-luxurious)" }}>
-            <div className="flex-1">
-              <h2 className="text-xl font-semibold mb-1 text-[#23272f] dark:text-[#ededed]" style={{ fontFamily: "var(--font-luxurious)" }}>
-                See Your Progress
-              </h2>
-              <p className="text-[#5a5a6e] dark:text-[#b6b6e5] text-sm mb-2" style={{ fontFamily: "var(--font-luxurious)" }}>
-                Visualize your weight and protein intake trends with beautiful charts.
+        </nav>
+
+        {/* Hero Section */}
+        <main className="flex-1 flex flex-col items-center justify-center px-6 py-8">
+          <div className="max-w-4xl mx-auto text-center space-y-12">
+            
+            {/* Hero Badge */}
+            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/60 dark:bg-slate-800/60 border border-slate-200/50 dark:border-slate-700/50 text-sm font-medium text-slate-600 dark:text-slate-300 backdrop-blur-sm">
+              <span className="w-2 h-2 bg-emerald-500 rounded-full"></span>
+              Nutrition tracking made simple
+            </div>
+
+            {/* Hero Title */}
+            <div className="space-y-6">
+              <h1 className="text-4xl sm:text-6xl font-light tracking-tight text-slate-900 dark:text-slate-100">
+                Your Complete
+                <br />
+                <span className="font-medium bg-gradient-to-r from-emerald-600 to-blue-600 bg-clip-text text-transparent">
+                  Nutrition Companion
+                </span>
+              </h1>
+              
+              <p className="text-lg sm:text-xl text-slate-600 dark:text-slate-400 max-w-2xl mx-auto font-light leading-relaxed">
+                Track your daily nutrition with the world's most comprehensive food database. 
+                Simply search, log, and monitor your progress.
               </p>
             </div>
-            <div className="w-full sm:w-40 h-24">
-              <ResponsiveContainer width="100%" height="100%">
-                <LineChart data={weightData}>
-                  <Line type="monotone" dataKey="weight" stroke="#b6b6e5" strokeWidth={2} dot={false} />
-                </LineChart>
-              </ResponsiveContainer>
+
+            {/* CTA Buttons */}
+            <div className="flex flex-col sm:flex-row gap-4 justify-center pt-4">
+              <button
+                disabled
+                className="px-8 py-3 rounded-lg bg-slate-100 dark:bg-slate-800 text-slate-400 dark:text-slate-500 font-medium cursor-not-allowed border border-slate-200 dark:border-slate-700"
+              >
+                Sign In (Coming Soon)
+              </button>
+              
+              <button
+                disabled
+                className="px-8 py-3 rounded-lg bg-slate-100 dark:bg-slate-800 text-slate-400 dark:text-slate-500 font-medium cursor-not-allowed border border-slate-200 dark:border-slate-700"
+              >
+                Create Account (Coming Soon)
+              </button>
             </div>
-            <div className="w-full sm:w-40 h-24">
-              <ResponsiveContainer width="100%" height="100%">
-                <AreaChart data={proteinData}>
-                  <Area type="monotone" dataKey="protein" stroke="#b6e5d8" fill="#b6e5d8" fillOpacity={0.15} />
-                </AreaChart>
-              </ResponsiveContainer>
+
+            {/* Guest Access */}
+            <div className="pt-6">
+              <button
+                className="px-8 py-3 rounded-lg bg-slate-800 hover:bg-slate-700 dark:bg-slate-200 dark:hover:bg-slate-300 text-slate-50 dark:text-slate-800 font-medium shadow-sm hover:shadow-md transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-slate-500 focus:ring-offset-2"
+                onClick={() => setShowPreview(true)}
+              >
+                Try Fitness 24 Free
+              </button>
+            </div>
+
+            {/* Preview */}
+            {showPreview && (
+              <div className="mt-12 mx-auto max-w-sm">
+                <div className="bg-white/80 dark:bg-slate-800/80 rounded-2xl p-6 shadow-lg border border-slate-200/50 dark:border-slate-700/50 backdrop-blur-sm">
+                  <div className="text-center mb-6">
+                    <h3 className="text-xl font-medium text-slate-900 dark:text-slate-100 mb-2">
+                      Get Started Instantly
+                    </h3>
+                    <p className="text-slate-600 dark:text-slate-400 text-sm">
+                      Set up your profile and start tracking
+                    </p>
+                  </div>
+                  
+                  <div className="space-y-3 text-left text-sm">
+                    <div className="flex items-center justify-between p-3 bg-slate-50 dark:bg-slate-700 rounded-lg">
+                      <span className="text-slate-600 dark:text-slate-300">Create your profile</span>
+                      <span className="text-slate-400">→</span>
+                    </div>
+                    <div className="flex items-center justify-between p-3 bg-slate-50 dark:bg-slate-700 rounded-lg">
+                      <span className="text-slate-600 dark:text-slate-300">Set your goals</span>
+                      <span className="text-slate-400">→</span>
+                    </div>
+                    <div className="flex items-center justify-between p-3 bg-slate-50 dark:bg-slate-700 rounded-lg">
+                      <span className="text-slate-600 dark:text-slate-300">Start logging food</span>
+                      <span className="text-slate-400">→</span>
+                    </div>
+                  </div>
+                  
+                  <button
+                    className="w-full mt-6 px-6 py-3 rounded-lg bg-slate-800 hover:bg-slate-700 dark:bg-slate-200 dark:hover:bg-slate-300 text-slate-50 dark:text-slate-800 font-medium shadow-sm hover:shadow-md transition-all duration-200"
+                    onClick={() => router.push("/dashboard")}
+                  >
+                    Start Your Journey
+                  </button>
+                </div>
+              </div>
+            )}
+
+            {/* Features Grid */}
+            <div className="pt-20">
+              <h2 className="text-2xl font-light text-center mb-12 text-slate-800 dark:text-slate-200">
+                Everything you need for nutrition tracking
+              </h2>
+              
+              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                {features.map((feature, index) => (
+                  <div key={index} className="text-center space-y-4">
+                    <div className="w-12 h-12 mx-auto bg-gradient-to-br from-emerald-100 to-blue-100 dark:from-emerald-900/30 dark:to-blue-900/30 rounded-xl flex items-center justify-center text-2xl">
+                      {feature.icon}
+                    </div>
+                    <div>
+                      <h3 className="text-lg font-medium text-slate-800 dark:text-slate-200 mb-2">
+                        {feature.title}
+                      </h3>
+                      <p className="text-slate-600 dark:text-slate-400 text-sm leading-relaxed">
+                        {feature.description}
+                      </p>
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </div>
+
+            {/* Preview Charts */}
+            <div className="pt-20">
+              <div className="bg-white/60 dark:bg-slate-800/60 rounded-2xl p-8 shadow-sm border border-slate-200/50 dark:border-slate-700/50 backdrop-blur-sm">
+                <h3 className="text-2xl font-light text-center mb-8 text-slate-800 dark:text-slate-200">
+                  Beautiful progress tracking
+                </h3>
+                
+                <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
+                  <div className="space-y-4">
+                    <h4 className="text-base font-medium text-slate-600 dark:text-slate-400">
+                      Weight Progress
+                    </h4>
+                    <div className="h-32 bg-gradient-to-br from-slate-50 to-stone-50 dark:from-slate-800 dark:to-stone-800 rounded-xl p-4">
+                      <ResponsiveContainer width="100%" height="100%">
+                        <LineChart data={weightData}>
+                          <Line 
+                            type="monotone" 
+                            dataKey="weight" 
+                            stroke="#059669" 
+                            strokeWidth={2} 
+                            dot={{ fill: '#059669', strokeWidth: 0, r: 3 }}
+                          />
+                        </LineChart>
+                      </ResponsiveContainer>
+                    </div>
+                  </div>
+                  
+                  <div className="space-y-4">
+                    <h4 className="text-base font-medium text-slate-600 dark:text-slate-400">
+                      Nutrition Trends
+                    </h4>
+                    <div className="h-32 bg-gradient-to-br from-slate-50 to-stone-50 dark:from-slate-800 dark:to-stone-800 rounded-xl p-4">
+                      <ResponsiveContainer width="100%" height="100%">
+                        <AreaChart data={proteinData}>
+                          <Area 
+                            type="monotone" 
+                            dataKey="protein" 
+                            stroke="#2563eb" 
+                            fill="#2563eb" 
+                            fillOpacity={0.1}
+                          />
+                        </AreaChart>
+                      </ResponsiveContainer>
+                    </div>
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
-        </div>
-      </main>
-      <footer className="mt-12 text-xs text-[#b6b6e5] dark:text-[#b6e5d8] text-center w-full" style={{ fontFamily: "var(--font-luxurious)" }}>
-        &copy; {new Date().getFullYear()} Fitness 24. All rights reserved.
-      </footer>
+        </main>
+
+        {/* Footer */}
+        <footer className="w-full px-6 py-8 border-t border-slate-200/50 dark:border-slate-700/50">
+          <div className="max-w-6xl mx-auto text-center">
+            <div className="flex items-center justify-center gap-2 mb-3">
+              <div className="w-6 h-6 bg-gradient-to-br from-emerald-600 to-blue-600 rounded-md flex items-center justify-center">
+                <Image src="/app_icon.png" alt="Fitness 24 Logo" width={14} height={14} className="dark:invert" />
+              </div>
+              <span className="text-base font-medium text-slate-700 dark:text-slate-300">
+                Fitness 24
+              </span>
+            </div>
+            <p className="text-sm text-slate-500 dark:text-slate-400">
+              &copy; {new Date().getFullYear()} Fitness 24. Simple nutrition tracking for everyone.
+            </p>
+          </div>
+        </footer>
+      </div>
     </div>
   );
 }
