@@ -1535,7 +1535,7 @@
     {
         "foodItemName": "Chicken Vindaloo",
         "foodItemCalories": 298,
-        "foodItemProtein": 30.7,
+        "foodItemProtein": 22.7,
         "foodItemCarbs": 18.9,
         "foodItemFat": 9.5
     },
@@ -1556,7 +1556,7 @@
     {
         "foodItemName": "Mutton Biryani",
         "foodItemCalories": 225,
-        "foodItemProtein": 33.2,
+        "foodItemProtein": 15.2,
         "foodItemCarbs": 96.2,
         "foodItemFat": 22.2
     },
@@ -1605,7 +1605,7 @@
     {
         "foodItemName": "Chicken Korma",
         "foodItemCalories": 328,
-        "foodItemProtein": 34,
+        "foodItemProtein": 24,
         "foodItemCarbs": 23,
         "foodItemFat": 13,
         "note": "Approximated from Chicken Vindaloo (added cream for korma richness)"
@@ -1613,7 +1613,7 @@
     {
         "foodItemName": "Chicken Chettinad",
         "foodItemCalories": 298,
-        "foodItemProtein": 34,
+        "foodItemProtein": 24,
         "foodItemCarbs": 21,
         "foodItemFat": 10,
         "note": "Approximated from Chicken Vindaloo (spicy coconut adjustments)"
