@@ -1,7 +1,7 @@
 "use client";
 
 import Image from "next/image";
-import { ResponsiveContainer, LineChart, Line, XAxis, YAxis, Tooltip, AreaChart, Area } from "recharts";
+import { ResponsiveContainer, LineChart, Line, AreaChart, Area } from "recharts";
 import { useRouter } from "next/navigation";
 import { useState, useEffect } from "react";
 
@@ -162,7 +162,7 @@ export default function Home() {
               </h1>
               
               <p className="text-lg sm:text-xl text-slate-600 dark:text-slate-400 max-w-2xl mx-auto font-light leading-relaxed">
-                Track your daily nutrition with the world's most comprehensive food database. 
+                Track your daily nutrition with the world&apos;s most comprehensive food database. 
                 Simply search, log, and monitor your progress.
               </p>
             </div>

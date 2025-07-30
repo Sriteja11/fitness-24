@@ -15,7 +15,7 @@ interface NutritionChartsProps {
 const COLORS = ['#b6b6e5', '#b6e5d8', '#f4b6b6'];
 
 // Custom tooltip for bar chart - styled for both light and dark modes
-const CustomBarTooltip = ({ active, payload, label }: TooltipProps<any, string>) => {
+const CustomBarTooltip = ({ active, payload, label }: TooltipProps<number, string>) => {
   if (active && payload && payload.length) {
     return (
       <div className="bg-white/95 dark:bg-[#23272f]/95 p-3 border border-[#e5e7eb] dark:border-[#393a3d] rounded-lg shadow-lg text-gray-900 dark:text-gray-100 text-sm backdrop-blur-sm">
