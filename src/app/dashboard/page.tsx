@@ -108,6 +108,7 @@ export default function DashboardPage() {
   });
 
   const [chartType, setChartType] = useState<'bar' | 'pie' | 'progress'>('bar');
+  const [formErrors, setFormErrors] = useState<Record<string, string>>({});
 
   // Updated target state with localStorage persistence
   const [calorieTarget, setCalorieTarget] = useState<number>(() => {
@@ -292,12 +293,36 @@ export default function DashboardPage() {
   }, [foodLog, today]);
 
   // Handle profile save
-  const handleProfileSave = () => {
-    if (!profileForm.name.trim()) return;
+  const handleProfileSave = (e?: React.FormEvent) => {
+    if (e) e.preventDefault();
+  
+    const { name, age, weight, height } = profileForm;
+  
+    let errors: Record<string, string> = {};
+  
+    if (!name.trim()) {
+      errors['name'] = "Name is required.";
+    }
+    if (age < 5 || age > 100) {
+      errors['age'] = "Age must be between 5 and 100.";
+    }
+    if (weight < 10 || weight > 200) {
+      errors['weight'] = "Weight must be between 10kg and 200kg.";
+    }
+    if (height < 70 || height > 250) {
+      errors['height'] = "Height must be between 70cm and 250cm.";
+    }
+  
+    setFormErrors(errors);
+  
+    if (Object.keys(errors).length > 0) {
+      return; // Stop if there's any error
+    }
+  
     setUserProfile(profileForm);
     setIsProfileCollapsed(true);
   };
-
+  
   // Handle profile edit
   const handleProfileEdit = () => {
     if (userProfile) {
@@ -400,6 +425,9 @@ export default function DashboardPage() {
                   onChange={e => setProfileForm({ ...profileForm, age: Number(e.target.value) })}
                   className="w-full rounded-lg bg-white/90 dark:bg-slate-800/90 border border-slate-200 dark:border-slate-700 px-4 py-2 text-base focus:outline-none focus:ring-2 focus:ring-emerald-500 transition-all duration-200"
                 />
+                {formErrors.age && (
+                  <p className="text-red-500 text-sm mt-1">{formErrors.age}</p>
+                )}
               </div>
             </div>
 
@@ -425,6 +453,9 @@ export default function DashboardPage() {
                   onChange={e => setProfileForm({ ...profileForm, height: Number(e.target.value) })}
                   className="w-full rounded-lg bg-white/90 dark:bg-slate-800/90 border border-slate-200 dark:border-slate-700 px-4 py-2 text-base focus:outline-none focus:ring-2 focus:ring-emerald-500 transition-all duration-200"
                 />
+                {formErrors.height && (
+                  <p className="text-red-500 text-sm mt-1">{formErrors.height}</p>
+                )}
               </div>
               <div>
                 <label className="block mb-1 font-medium text-slate-700 dark:text-slate-300">Weight (kg)</label>
@@ -436,6 +467,9 @@ export default function DashboardPage() {
                   onChange={e => setProfileForm({ ...profileForm, weight: Number(e.target.value) })}
                   className="w-full rounded-lg bg-white/90 dark:bg-slate-800/90 border border-slate-200 dark:border-slate-700 px-4 py-2 text-base focus:outline-none focus:ring-2 focus:ring-emerald-500 transition-all duration-200"
                 />
+                {formErrors.weight && (
+                  <p className="text-red-500 text-sm mt-1">{formErrors.weight}</p>
+                )}
               </div>
             </div>
 
