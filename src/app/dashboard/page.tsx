@@ -92,12 +92,12 @@ export default function DashboardPage() {
 
   const [profileForm, setProfileForm] = useState<UserProfile>({
     name: "",
-    height: 170,
-    weight: 70,
+    height: 0, // Changed from 170 to 0
+    weight: 0, // Changed from 70 to 0
     gender: 'male',
-    age: 25,
-    activity: 'moderate' // Default to moderate
-  });
+    age: 0, // Changed from 25 to 0
+    activity: '' // Changed from 'moderate' to empty string
+  })
 
   // Mode state
   const [mode, setMode] = useState<string>(() => {
@@ -296,21 +296,24 @@ export default function DashboardPage() {
   const handleProfileSave = (e?: React.FormEvent) => {
     if (e) e.preventDefault();
   
-    const { name, age, weight, height } = profileForm;
+    const { name, age, weight, height, activity } = profileForm;
   
-    let errors: Record<string, string> = {};
+    const errors: Record<string, string> = {};
   
     if (!name.trim()) {
       errors['name'] = "Name is required.";
     }
-    if (age < 5 || age > 100) {
+    if (!age || age < 5 || age > 100) {
       errors['age'] = "Age must be between 5 and 100.";
     }
-    if (weight < 10 || weight > 200) {
+    if (!weight || weight < 10 || weight > 200) {
       errors['weight'] = "Weight must be between 10kg and 200kg.";
     }
-    if (height < 70 || height > 250) {
+    if (!height || height < 70 || height > 250) {
       errors['height'] = "Height must be between 70cm and 250cm.";
+    }
+    if (!activity) {
+      errors['activity'] = "Please select an activity level.";
     }
   
     setFormErrors(errors);
@@ -402,7 +405,6 @@ export default function DashboardPage() {
         <div className="relative z-10 w-full max-w-4xl bg-white/60 dark:bg-slate-800/60 rounded-2xl shadow-lg border border-slate-200/50 dark:border-slate-700/50 backdrop-blur-sm p-6">
           <h1 className="text-3xl font-light tracking-tight mb-6 text-center text-slate-900 dark:text-slate-100">Welcome to Your Nutrition Dashboard</h1>
           <h2 className="text-xl font-medium mb-4 text-center text-slate-800 dark:text-slate-200">Set Up Your Profile</h2>
-
           <div className="space-y-6">
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
               <div>
@@ -414,6 +416,9 @@ export default function DashboardPage() {
                   onChange={e => setProfileForm({ ...profileForm, name: e.target.value })}
                   className="w-full rounded-lg bg-white/90 dark:bg-slate-800/90 border border-slate-200 dark:border-slate-700 px-4 py-2 text-base focus:outline-none focus:ring-2 focus:ring-emerald-500 transition-all duration-200"
                 />
+                {formErrors.name && (
+                  <p className="text-red-500 text-sm mt-1">{formErrors.name}</p>
+                )}
               </div>
               <div>
                 <label className="block mb-1 font-medium text-slate-700 dark:text-slate-300">Age</label>
@@ -421,8 +426,9 @@ export default function DashboardPage() {
                   type="number"
                   min="10"
                   max="100"
-                  value={profileForm.age}
-                  onChange={e => setProfileForm({ ...profileForm, age: Number(e.target.value) })}
+                  placeholder="Enter your age (10-100)"
+                  value={profileForm.age || ''} // Show empty string if 0
+                  onChange={e => setProfileForm({ ...profileForm, age: Number(e.target.value) || 0 })}
                   className="w-full rounded-lg bg-white/90 dark:bg-slate-800/90 border border-slate-200 dark:border-slate-700 px-4 py-2 text-base focus:outline-none focus:ring-2 focus:ring-emerald-500 transition-all duration-200"
                 />
                 {formErrors.age && (
@@ -449,8 +455,9 @@ export default function DashboardPage() {
                   type="number"
                   min="100"
                   max="250"
-                  value={profileForm.height}
-                  onChange={e => setProfileForm({ ...profileForm, height: Number(e.target.value) })}
+                  placeholder="Enter height (100-250 cm)"
+                  value={profileForm.height || ''} // Show empty string if 0
+                  onChange={e => setProfileForm({ ...profileForm, height: Number(e.target.value) || 0 })}
                   className="w-full rounded-lg bg-white/90 dark:bg-slate-800/90 border border-slate-200 dark:border-slate-700 px-4 py-2 text-base focus:outline-none focus:ring-2 focus:ring-emerald-500 transition-all duration-200"
                 />
                 {formErrors.height && (
@@ -463,8 +470,9 @@ export default function DashboardPage() {
                   type="number"
                   min="30"
                   max="200"
-                  value={profileForm.weight}
-                  onChange={e => setProfileForm({ ...profileForm, weight: Number(e.target.value) })}
+                  placeholder="Enter weight (30-200 kg)"
+                  value={profileForm.weight || ''} // Show empty string if 0
+                  onChange={e => setProfileForm({ ...profileForm, weight: Number(e.target.value) || 0 })}
                   className="w-full rounded-lg bg-white/90 dark:bg-slate-800/90 border border-slate-200 dark:border-slate-700 px-4 py-2 text-base focus:outline-none focus:ring-2 focus:ring-emerald-500 transition-all duration-200"
                 />
                 {formErrors.weight && (
@@ -480,16 +488,20 @@ export default function DashboardPage() {
                 onChange={e => setProfileForm({ ...profileForm, activity: e.target.value })}
                 className="w-full rounded-lg bg-white/90 dark:bg-slate-800/90 border border-slate-200 dark:border-slate-700 px-4 py-2 text-base focus:outline-none focus:ring-2 focus:ring-emerald-500 transition-all duration-200"
               >
+                <option value="">Select your activity level</option>
                 {ACTIVITY_LEVELS.map(a => (
                   <option key={a.value} value={a.value}>{a.label}</option>
                 ))}
               </select>
+              {formErrors.activity && (
+                <p className="text-red-500 text-sm mt-1">{formErrors.activity}</p>
+              )}
             </div>
 
             <div className="flex justify-center pt-4">
               <button
                 onClick={handleProfileSave}
-                disabled={!profileForm.name.trim()}
+                disabled={!profileForm.name.trim() || !profileForm.age || !profileForm.height || !profileForm.weight || !profileForm.activity}
                 className="px-8 py-3 rounded-lg bg-gradient-to-r from-emerald-600 to-blue-600 text-white font-medium shadow-md hover:shadow-lg disabled:opacity-50 disabled:cursor-not-allowed transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-emerald-500 focus:ring-offset-2"
               >
                 Save Profile

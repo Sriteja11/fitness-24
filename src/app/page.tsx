@@ -4,6 +4,7 @@ import Image from "next/image";
 import { ResponsiveContainer, LineChart, Line, AreaChart, Area } from "recharts";
 import { useRouter } from "next/navigation";
 import { useState, useEffect, SVGProps } from "react";
+import { Modal } from "@/components/Modal";
 
 // Modern SVG Icons Component
 // Fixed Icons Component - accepts props and forwards them to SVG
@@ -146,7 +147,7 @@ export default function Home() {
   };
 
   return (
-    <div className="relative min-h-screen bg-gradient-to-br from-slate-50 via-white to-stone-50 dark:from-slate-950 dark:via-slate-900 dark:to-stone-950 text-slate-800 dark:text-slate-200">
+    <div className="relative min-h-screen bg-gradient-to-br from-slate-50 via-stone-50 to-neutral-50 dark:from-slate-950 dark:via-stone-950 dark:to-neutral-950 text-slate-800 dark:text-slate-200 px-4 py-8 pt-20 flex flex-col items-center">
 
       {/* Enhanced Background Elements with Premium Gradients */}
       {/* Enhanced Background Elements with More Visible Gradients for Light Mode */}
@@ -199,7 +200,7 @@ export default function Home() {
 
       <div className="relative z-10 min-h-screen flex flex-col">
         {/* Enhanced Navigation */}
-        <nav className="w-full px-6 py-6 backdrop-blur-sm">
+        {/* <nav className="w-full px-6 py-6 backdrop-blur-sm">
           <div className="max-w-6xl mx-auto flex justify-between items-center">
             <div className="flex items-center gap-3">
               <div className="w-10 h-10 bg-gradient-to-br from-emerald-600 via-emerald-500 to-blue-600 rounded-xl flex items-center justify-center shadow-lg hover:shadow-xl transition-shadow duration-300">
@@ -210,7 +211,7 @@ export default function Home() {
               </span>
             </div>
           </div>
-        </nav>
+        </nav> */}
 
         {/* Enhanced Hero Section */}
         <main className="flex-1 flex flex-col items-center justify-center px-6 py-8">
@@ -273,61 +274,59 @@ export default function Home() {
 
             {/* Enhanced Preview Modal */}
             {showPreview && (
-              <div className="mt-16 mx-auto max-w-md">
-                <div className="bg-white/90 dark:bg-slate-800/90 rounded-3xl p-8 shadow-2xl border border-slate-200/60 dark:border-slate-700/60 backdrop-blur-xl">
-                  <div className="text-center mb-8">
-                    <div className="w-16 h-16 mx-auto mb-4 bg-gradient-to-br from-emerald-500 to-blue-600 rounded-2xl flex items-center justify-center shadow-lg">
-                      <Icons.Play className="text-white w-6 h-6" />
-                    </div>
-                    <h3 className="text-2xl font-semibold text-slate-900 dark:text-slate-100 mb-3">
-                      Get Started Instantly
-                    </h3>
-                    <p className="text-slate-600 dark:text-slate-400">
-                      Set up your profile and start tracking nutrition today
-                    </p>
+              <Modal onClose={() => setShowPreview(false)}>
+                <div className="text-center mb-8">
+                  <div className="w-16 h-16 mx-auto mb-4 bg-gradient-to-br from-emerald-500 to-blue-600 rounded-2xl flex items-center justify-center shadow-lg">
+                    <Icons.Play className="text-white w-6 h-6" />
                   </div>
-
-                  <div className="space-y-4 text-left">
-                    <div className="flex items-center justify-between p-4 bg-gradient-to-r from-slate-50 to-slate-100/50 dark:from-slate-700 dark:to-slate-600/50 rounded-xl border border-slate-200/50 dark:border-slate-600/50 hover:shadow-md transition-all duration-300">
-                      <div className="flex items-center gap-3">
-                        <div className="w-8 h-8 bg-emerald-100 dark:bg-emerald-900/30 rounded-lg flex items-center justify-center">
-                          <Icons.User className="w-4 h-4 text-emerald-600 dark:text-emerald-400" />
-                        </div>
-                        <span className="text-slate-700 dark:text-slate-300 font-medium">Create your profile</span>
-                      </div>
-                      <Icons.ArrowRight className="text-slate-400 w-4 h-4" />
-                    </div>
-
-                    <div className="flex items-center justify-between p-4 bg-gradient-to-r from-slate-50 to-slate-100/50 dark:from-slate-700 dark:to-slate-600/50 rounded-xl border border-slate-200/50 dark:border-slate-600/50 hover:shadow-md transition-all duration-300">
-                      <div className="flex items-center gap-3">
-                        <div className="w-8 h-8 bg-blue-100 dark:bg-blue-900/30 rounded-lg flex items-center justify-center">
-                          <Icons.Target className="w-4 h-4 text-blue-600 dark:text-blue-400" />
-                        </div>
-                        <span className="text-slate-700 dark:text-slate-300 font-medium">Set your goals</span>
-                      </div>
-                      <Icons.ArrowRight className="text-slate-400 w-4 h-4" />
-                    </div>
-
-                    <div className="flex items-center justify-between p-4 bg-gradient-to-r from-slate-50 to-slate-100/50 dark:from-slate-700 dark:to-slate-600/50 rounded-xl border border-slate-200/50 dark:border-slate-600/50 hover:shadow-md transition-all duration-300">
-                      <div className="flex items-center gap-3">
-                        <div className="w-8 h-8 bg-indigo-100 dark:bg-indigo-900/30 rounded-lg flex items-center justify-center">
-                          <Icons.FileText className="w-4 h-4 text-indigo-600 dark:text-indigo-400" />
-                        </div>
-                        <span className="text-slate-700 dark:text-slate-300 font-medium">Start logging food</span>
-                      </div>
-                      <Icons.ArrowRight className="text-slate-400 w-4 h-4" />
-                    </div>
-                  </div>
-
-                  <button
-                    className="w-full mt-8 px-8 py-4 rounded-xl bg-gradient-to-r from-emerald-600 to-blue-600 hover:from-emerald-500 hover:to-blue-500 text-white font-semibold shadow-lg hover:shadow-xl transition-all duration-300 flex items-center justify-center gap-2"
-                    onClick={() => router.push("/dashboard")}
-                  >
-                    <Icons.ArrowRight />
-                    Start Your Journey
-                  </button>
+                  <h3 className="text-2xl font-semibold text-slate-900 dark:text-slate-100 mb-3">
+                    Get Started Instantly
+                  </h3>
+                  <p className="text-slate-600 dark:text-slate-400">
+                    Set up your profile and start tracking nutrition today
+                  </p>
                 </div>
-              </div>
+
+                <div className="space-y-4 text-left">
+                  <div className="flex items-center justify-between p-4 bg-gradient-to-r from-slate-50 to-slate-100/50 dark:from-slate-700 dark:to-slate-600/50 rounded-xl border border-slate-200/50 dark:border-slate-600/50 hover:shadow-md transition-all duration-300">
+                    <div className="flex items-center gap-3">
+                      <div className="w-8 h-8 bg-emerald-100 dark:bg-emerald-900/30 rounded-lg flex items-center justify-center">
+                        <Icons.User className="w-4 h-4 text-emerald-600 dark:text-emerald-400" />
+                      </div>
+                      <span className="text-slate-700 dark:text-slate-300 font-medium">Create your profile</span>
+                    </div>
+                    <Icons.ArrowRight className="text-slate-400 w-4 h-4" />
+                  </div>
+
+                  <div className="flex items-center justify-between p-4 bg-gradient-to-r from-slate-50 to-slate-100/50 dark:from-slate-700 dark:to-slate-600/50 rounded-xl border border-slate-200/50 dark:border-slate-600/50 hover:shadow-md transition-all duration-300">
+                    <div className="flex items-center gap-3">
+                      <div className="w-8 h-8 bg-blue-100 dark:bg-blue-900/30 rounded-lg flex items-center justify-center">
+                        <Icons.Target className="w-4 h-4 text-blue-600 dark:text-blue-400" />
+                      </div>
+                      <span className="text-slate-700 dark:text-slate-300 font-medium">Set your goals</span>
+                    </div>
+                    <Icons.ArrowRight className="text-slate-400 w-4 h-4" />
+                  </div>
+
+                  <div className="flex items-center justify-between p-4 bg-gradient-to-r from-slate-50 to-slate-100/50 dark:from-slate-700 dark:to-slate-600/50 rounded-xl border border-slate-200/50 dark:border-slate-600/50 hover:shadow-md transition-all duration-300">
+                    <div className="flex items-center gap-3">
+                      <div className="w-8 h-8 bg-indigo-100 dark:bg-indigo-900/30 rounded-lg flex items-center justify-center">
+                        <Icons.FileText className="w-4 h-4 text-indigo-600 dark:text-indigo-400" />
+                      </div>
+                      <span className="text-slate-700 dark:text-slate-300 font-medium">Start logging food</span>
+                    </div>
+                    <Icons.ArrowRight className="text-slate-400 w-4 h-4" />
+                  </div>
+                </div>
+
+                <button
+                  className="w-full mt-8 px-8 py-4 rounded-xl bg-gradient-to-r from-emerald-600 to-blue-600 hover:from-emerald-500 hover:to-blue-500 text-white font-semibold shadow-lg hover:shadow-xl transition-all duration-300 flex items-center justify-center gap-2"
+                  onClick={() => router.push("/dashboard")}
+                >
+                  <Icons.ArrowRight />
+                  Start Your Journey
+                </button>
+              </Modal>
             )}
 
             {/* Enhanced Features Grid */}

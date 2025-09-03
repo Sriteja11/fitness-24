@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
+import SmartHeader from "@/components/Header"; // adjust path as needed
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -15,31 +16,25 @@ const geistMono = Geist_Mono({
 export const metadata: Metadata = {
   title: "Fitness 24",
   description: "Your fitness companion.",
-  manifest: "../../public/manifest.json",
+  themeColor: "#2563eb",
+  manifest: "/manifest.json", // served from /public
+  icons: {
+    icon: [
+      { url: "/app_icon.png", sizes: "192x192", type: "image/png" },
+      { url: "/app_icon.png", sizes: "512x512", type: "image/png" },
+    ],
+    apple: [{ url: "/app_icon.png" }],
+  },
 };
 
 export default function RootLayout({
   children,
-}: Readonly<{
-  children: React.ReactNode;
-}>) {
+}: Readonly<{ children: React.ReactNode }>) {
   return (
     <html lang="en">
-      <head>
-        <link rel="manifest" href="../../public/manifest.json" />
-        <meta name="theme-color" content="#2563eb" />
-        <meta name="apple-mobile-web-app-capable" content="yes" />
-        <meta name="apple-mobile-web-app-status-bar-style" content="black" />
-        <meta name="apple-mobile-web-app-title" content="Fitness24" />
-        <link rel="apple-touch-icon" href="../../public/app_icon.png" />
-        <meta name="mobile-web-app-capable" content="yes" />
-        <link rel="icon" sizes="192x192" href="../../public/app_icon.png" />
-        <link rel="icon" sizes="512x512" href="../../public/app_icon.png" />
-      </head>
-      <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
-      >
-        {children}
+      <body className={`${geistSans.variable} ${geistMono.variable} antialiased`}>
+        <SmartHeader currentPage="Dashboard" />
+        <main className="pt-20">{children}</main>
       </body>
     </html>
   );
